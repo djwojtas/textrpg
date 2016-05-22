@@ -38,20 +38,22 @@ public:
     //END OF SETTERS-------------
 
     //Getters
-    int getStrength(int s);
-    int getAgility(int a);
-    int getHP(int hpoints);
+    int getStrength() const;
+    int getAgility() const;
+    int getHP() const;
 
-    int getStrengthBoost();
-    int getAgilityBoost();
-    int getHPBoost();
+    int getStrengthBoost() const;
+    int getAgilityBoost() const;
+    int getHPBoost() const;
 
-    int getRuneCount(int r);
+    int getRuneCount() const;
+
+    string getName() const;
     //END OF GETTERS-----------
 
     //Utility
     void addArtefact(Artefact &ar);
-    void printHeroe();
+    void printHeroe() const;
 };
 
 #endif

@@ -18,22 +18,22 @@ void Artefact::setBoostAmount(int a)
     boost_amount=a;
 }
 
-string Artefact::getName()
+string Artefact::getName() const
 {
     return name;
 }
 
-E_Skill Artefact::getSkillBoost()
+E_Skill Artefact::getSkillBoost() const
 {
     return skill_to_boost;
 }
 
-int Artefact::getBoostAmount()
+int Artefact::getBoostAmount() const
 {
     return boost_amount;
 }
 
-void Artefact::printArtefact()
+void Artefact::printArtefact() const
 {
     string skill_in;
 

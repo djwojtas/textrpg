@@ -28,12 +28,12 @@ public:
     void setBoostAmount(int a);
 
     //Getters
-    string getName();
-    E_Skill getSkillBoost();
-    int getBoostAmount();
+    string getName() const;
+    E_Skill getSkillBoost() const;
+    int getBoostAmount() const;
 
     //Utilities
-    void printArtefact();
+    void printArtefact() const;
 
 };
 

@@ -54,39 +54,44 @@ void Heroe::setRuneCount(int r)
     rune_count=r;
 }
 
-int Heroe::getStrength(int s)
+int Heroe::getStrength() const
 {
     return strength;
 }
 
-int Heroe::getAgility(int a)
+int Heroe::getAgility() const
 {
     return agility;
 }
 
-int Heroe::getHP(int hpoints)
+int Heroe::getHP() const
 {
     return hp;
 }
 
-int Heroe::getStrengthBoost()
+int Heroe::getStrengthBoost() const
 {
     return strength_boost;
 }
 
-int Heroe::getAgilityBoost()
+int Heroe::getAgilityBoost() const
 {
     return agility_boost;
 }
 
-int Heroe::getHPBoost()
+int Heroe::getHPBoost() const
 {
     return hp_boost;
 }
 
-int Heroe::getRuneCount(int r)
+int Heroe::getRuneCount() const
 {
     return rune_count;
+}
+
+string Heroe::getName() const
+{
+    return name;
 }
 
 void Heroe::addArtefact(Artefact &ar)
@@ -107,14 +112,14 @@ void Heroe::addArtefact(Artefact &ar)
     }
 }
 
-void Heroe::printHeroe()
+void Heroe::printHeroe() const
 {
     cout<<endl;
-    cout<<"Name = "<<name<<endl;
-    cout<<"Strength = "<<strength<<" (+"<<strength_boost<<") "<<endl;
-    cout<<"Agility = "<<agility<<" (+"<<agility_boost<<") "<<endl;
-    cout<<"Health Points = "<<" (+"<<hp_boost<<") "<<endl;
-    cout<<"Possessed Runes = "<<rune_count<<endl;
+    cout<<"Name = "<<getName()<<endl;
+    cout<<"Strength = "<<getStrength()<<" (+"<<getStrengthBoost()<<") "<<endl;
+    cout<<"Agility = "<<getAgility()<<" (+"<<getAgilityBoost()<<") "<<endl;
+    cout<<"Health Points = "<<" (+"<<getHPBoost()<<") "<<endl;
+    cout<<"Possessed Runes = "<<getRuneCount()<<endl;
 
     cout<<endl;
     cout<<"--List of Artefacts--"<<endl;
