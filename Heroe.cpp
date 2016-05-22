@@ -136,3 +136,15 @@ void Heroe::printHeroe() const
         artefact_list[i].printArtefact();
     }
 }
+
+void Heroe::getDMG(int dmg_amount)
+{
+    if(dmg_amount>getHPBoost())
+    {
+        dmg_amount-=getHPBoost();
+        setHPBoost(0);
+        setHP(getHP()-dmg_amount);
+    } else {
+        setHPBoost(getHPBoost()-dmg_amount);
+    }
+}
