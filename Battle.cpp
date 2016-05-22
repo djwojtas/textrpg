@@ -60,7 +60,7 @@ void Battle::play(Heroe& subject)
     }
     else if(random_monster.getHP()<=0)
     {
-        cout<<"You Defeated"<<random_monster.getName()<<endl;
+        cout<<"You Defeated "<<random_monster.getName()<<endl;
     }
 }
 

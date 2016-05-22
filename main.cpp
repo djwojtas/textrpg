@@ -6,6 +6,7 @@
 #include "Start.h"
 #include "Monster.h"
 #include "Battle.h"
+#include "Travel.h"
 
 #include <vector>
 
@@ -27,11 +28,17 @@ int main()
 
     Monster orc_warrior(1, 2, 300, "Orc Warrior");
 
-    Battle bitewka;
+    /*Battle bitewka;
 
     bitewka.play(leszek, orc_warrior);
 
-    bitewka.getNext()->play(leszek);
+    bitewka.getNext()->play(leszek);*/
+
+    Travel podroz;
+
+    podroz.play(leszek);
+
+    podroz.getNext()->play(leszek);
 
     return 0;
 }
