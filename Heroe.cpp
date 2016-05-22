@@ -118,7 +118,7 @@ void Heroe::printHeroe() const
     cout<<"Name = "<<getName()<<endl;
     cout<<"Strength = "<<getStrength()<<" (+"<<getStrengthBoost()<<") "<<endl;
     cout<<"Agility = "<<getAgility()<<" (+"<<getAgilityBoost()<<") "<<endl;
-    cout<<"Health Points = "<<" (+"<<getHPBoost()<<") "<<endl;
+    cout<<"Health Points = "<<getHP()<<" (+"<<getHPBoost()<<") "<<endl;
     cout<<"Possessed Runes = "<<getRuneCount()<<endl;
 
     cout<<endl;
