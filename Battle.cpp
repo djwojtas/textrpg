@@ -1,5 +1,6 @@
 #include "Battle.h"
 #include "Monster.h"
+#include "RiddleBase.h"
 
 #include <cstdlib>
 #include <ctime>
@@ -115,5 +116,10 @@ void Battle::play(Heroe& subject, Monster& opponent)
 
 GameStep* Battle::getNext()
 {
-    /*Zagadka*/
+    int index_of_riddle=( rand() % BaseOfRiddles.getSize() );
+    Riddle drawn_riddle=BaseOfRiddles.getRiddle(index_of_riddle);
+
+    Riddle* riddle_after_battle=new Riddle(drawn_riddle);
+
+    return riddle_after_battle;
 }

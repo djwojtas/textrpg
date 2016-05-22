@@ -7,10 +7,13 @@
 #include "Monster.h"
 #include "Battle.h"
 
+#include <vector>
+
 using namespace std;
 
 int main()
 {
+    vector<Riddle> Riddles;
     Start main_adventure;
 
     Artefact WloczniaSmierci("Spear of Death", STRENGTH, 1);
@@ -21,13 +24,6 @@ int main()
 
     leszek.addArtefact(WloczniaSmierci);
     leszek.addArtefact(MieczPrzeznaczenia);
-    //leszek.printHeroe();
-
-    //Riddle zagadka("Ta rzecz glebokie korzenie miewa, wyzsza jest nizli drzewa, ku niebu siega wyniosle, chociaz ni piedzi nie rosnie", "gora");
-
-    //zagadka.play(leszek);
-
-   // leszek.printHeroe();
 
     Monster orc_warrior(1, 2, 300, "Orc Warrior");
 
@@ -35,7 +31,7 @@ int main()
 
     bitewka.play(leszek, orc_warrior);
 
-
+    bitewka.getNext()->play(leszek);
 
     return 0;
 }
