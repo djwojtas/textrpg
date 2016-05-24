@@ -1,5 +1,6 @@
 #include "Travel.h"
 #include "Battle.h"
+#include "Fate.h"
 
 using namespace std;
 
@@ -23,6 +24,8 @@ void Travel::play(Heroe& subject)
     while(((user_choice!=1)&&(user_choice!=2))||(cin.fail()))
     {
         cout<<"Type 1 /to set off to dangerous areas/ or 2 /to travel by safe roads/ :";
+        std::cin.clear();
+        std::cin.sync();
         cin>>user_choice;
     }
 
@@ -35,5 +38,11 @@ GameStep* Travel::getNext()
     {
         Battle* battle_after_travel = new Battle;
         return battle_after_travel;
+    }
+    else if (getChoice()==2)
+    {
+        Fate* fate_after_travel=new Fate();
+
+        return fate_after_travel;
     }
 }

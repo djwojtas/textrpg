@@ -54,7 +54,8 @@ public:
     //Utility
     void addArtefact(Artefact &ar);
     void printHeroe() const;
-    void getDMG(int dmg_amount);
+    void getDMG(int dmg_amount); //receive DMG
+    void loseArtefacts();
 };
 
 #endif

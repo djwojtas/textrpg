@@ -14,6 +14,8 @@ using namespace std;
 
 int main()
 {
+    //(BaseOfArtefacts.getArtefact(1)).printArtefact();
+
     vector<Riddle> Riddles;
     Start main_adventure;
 

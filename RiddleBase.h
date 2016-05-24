@@ -41,6 +41,4 @@ public:
 
 } BaseOfRiddles;
 
-//extern RiddleBase BaseOfRiddles;
-
 #endif

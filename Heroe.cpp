@@ -148,3 +148,8 @@ void Heroe::getDMG(int dmg_amount)
         setHPBoost(getHPBoost()-dmg_amount);
     }
 }
+
+void Heroe::loseArtefacts()
+{
+    artefact_list.clear();
+}
