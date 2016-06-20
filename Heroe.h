@@ -58,7 +58,7 @@ public:
 
     /// \brief Agility setter
     ///
-    /// \param s - agility to set
+    /// \param a - agility to set
     void setAgility(int a);
 
     /// \brief HP setter

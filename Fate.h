@@ -13,6 +13,7 @@
 // -------------------------------------------------------------------------
 
 #include "GameStep.h"
+#include "ArtefactBase.h"
 
 // -------------------------------------------------------------------------
 
@@ -24,10 +25,11 @@
 */
 class Fate : public GameStep
 {
+    ArtefactBase *BaseOfArtefacts; ///< pointer to class that holds vector of all artifacts
     int good_or_bad_luck; ///< 0 -> bad luck ; 1 -> good luck
 public:
     /// \brief Default class constructor
-    Fate();
+    Fate(ArtefactBase *BaseOfArtefacts_);
 
     /// \brief Play the action connected with Fate game state
     ///
