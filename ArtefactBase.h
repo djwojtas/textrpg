@@ -84,6 +84,6 @@ public:
         return base.size();
     }
 
-} BaseOfArtefacts;
+};
 
 #endif

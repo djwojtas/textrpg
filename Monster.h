@@ -64,7 +64,7 @@ public:
 
     /// \brief Agility setter
     ///
-    /// \param s - agility to set
+    /// \param a - agility to set
     void setAgility(int a);
 
     /// \brief Strength setter
@@ -79,7 +79,7 @@ public:
 
     /// \brief Name setter
     ///
-    /// \param hpoints - Name to set
+    /// \param n - Name to set
     void setName(string n);
     //END OF SETTERS-------------
 

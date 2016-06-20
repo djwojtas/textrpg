@@ -13,6 +13,7 @@
 // -------------------------------------------------------------------------
 
 #include "GameStep.h"
+#include "ArtefactBase.h"
 
 // -------------------------------------------------------------------------
 
@@ -24,6 +25,7 @@
 */
 class Travel:public GameStep
 {
+    ArtefactBase *BaseOfArtefacts; ///< pointer to class that holds vector of all artifacts
     int choice; ///< 1 -> dangerous areas ;;; 2 -> safe roads
 public:
     /// \brief Choice setter

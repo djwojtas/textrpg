@@ -18,8 +18,12 @@ using namespace std;
 
 // --------------------------------------------------------------
 
+/// Enum that represent skills
 typedef enum Skill
-{STRENGTH=0, AGILITY, HP} E_Skill; /// <Enum, that represent skills
+{STRENGTH=0, ///< strength
+ AGILITY, ///< agility
+ HP ///< health points
+} E_Skill;
 
 /**
 * \class Artefact
@@ -53,12 +57,12 @@ public:
 
     /// \brief Skill-to-boost setter
     ///
-    /// \param n - Skill-to-boost to set
+    /// \param s - Skill-to-boost to set
     void setSkillBoost(E_Skill s);
 
     /// \brief Boost amount setter
     ///
-    /// \param ba - Boost amount to set
+    /// \param a - Boost amount to set
     void setBoostAmount(int a);
 
     /// \brief Name getter
