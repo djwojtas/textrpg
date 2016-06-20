@@ -67,7 +67,6 @@ public:
         return base.size();
     }
 
-} BaseOfRiddles ///< class that holds vector of all riddles
-;
+}BaseOfRiddles /*!< class that holds vector of all riddles */;
 
 #endif
