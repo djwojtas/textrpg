@@ -1,11 +1,11 @@
 #include "Monster.h"
 
-Monster::Monster(int s, int a, int hpoints, string n)
+Monster::Monster(int strength_, int agility_, int hp_, string name_)
 {
-    strength=s;
-    agility=a;
-    hp=hpoints;
-    name=n;
+    strength=strength_;
+    agility=agility_;
+    hp=hp_;
+    name=name_;
 }
 
 int Monster::getStrength() const
@@ -28,24 +28,24 @@ string Monster::getName() const
     return name;
 }
 
-void Monster::setAgility(int a)
+void Monster::setAgility(int agility_)
 {
-    agility=a;
+    agility=agility_;
 }
 
-void Monster::setStrength(int s)
+void Monster::setStrength(int strength_)
 {
-    strength=s;
+    strength=strength_;
 }
 
-void Monster::setHP(int hpoints)
+void Monster::setHP(int hp_)
 {
-    hp=hpoints;
+    hp=hp_;
 }
 
-void Monster::setName(string n)
+void Monster::setName(string name_)
 {
-    name=n;
+    name=name_;
 }
 
 void Monster::printMonster() const

@@ -28,8 +28,8 @@ class Travel:public GameStep
 public:
     /// \brief Choice setter
     ///
-    /// \param c - 1 -> dangerous areas ;;; 2 -> safe roads
-    void setChoice(int c);
+    /// \param choice_ - 1 -> dangerous areas ;;; 2 -> safe roads
+    void setChoice(int choice_);
 
     /// \brief Choice getter
     ///

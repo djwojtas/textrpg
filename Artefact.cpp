@@ -1,21 +1,27 @@
 #include "Artefact.h"
 
-
 using namespace std;
 
-void Artefact::setName(string n)
+Artefact::Artefact(string name_, E_Skill skill_to_boost_, int boost_amount_)
 {
-    name=n;
+    name=name_;
+    skill_to_boost=skill_to_boost_;
+    boost_amount=boost_amount_;
 }
 
-void Artefact::setSkillBoost(E_Skill s)
+void Artefact::setName(string name_)
 {
-    skill_to_boost=s;
+    name=name_;
 }
 
-void Artefact::setBoostAmount(int a)
+void Artefact::setSkillBoost(E_Skill skill_to_boost_)
 {
-    boost_amount=a;
+    skill_to_boost=skill_to_boost_;
+}
+
+void Artefact::setBoostAmount(int boost_amount_)
+{
+    boost_amount=boost_amount_;
 }
 
 string Artefact::getName() const

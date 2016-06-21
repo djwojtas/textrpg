@@ -32,11 +32,11 @@ class Monster
 public:
     /// \brief The class constructor
     ///
-    /// \param s - Monster's strength
-    /// \param a - Monster's agility
-    /// \param hpoints - Monster's HP
-    /// \param n - Monster's name
-    Monster(int s, int a, int hpoints, string n);
+    /// \param strength_ - Monster's strength
+    /// \param agility_ - Monster's agility
+    /// \param hp_ - Monster's HP
+    /// \param name_ - Monster's name
+    Monster(int strength_, int agility_, int hp_, string name_);
 
     //Getters
     /// \brief Strength getter
@@ -64,23 +64,23 @@ public:
 
     /// \brief Agility setter
     ///
-    /// \param a - agility to set
-    void setAgility(int a);
+    /// \param agility_ - agility to set
+    void setAgility(int agility_);
 
     /// \brief Strength setter
     ///
-    /// \param s - strength to set
-    void setStrength(int s);
+    /// \param strength_ - strength to set
+    void setStrength(int strength_);
 
     /// \brief HP setter
     ///
-    /// \param hpoints - HP to set
-    void setHP(int hpoints);
+    /// \param hp_ - HP to set
+    void setHP(int hp_);
 
     /// \brief Name setter
     ///
-    /// \param n - Name to set
-    void setName(string n);
+    /// \param name_ - Name to set
+    void setName(string name_);
     //END OF SETTERS-------------
 
     //Utility

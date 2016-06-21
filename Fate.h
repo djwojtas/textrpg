@@ -46,8 +46,8 @@ public:
 
     /// \brief Good-Or-Bad-Luck Setter
     ///
-    /// \param s - 0 -> bad luck ; 1 -> good luck
-    void setGoodOrBadLuck(int s);
+    /// \param good_or_bad_luck_ - 0 -> bad luck ; 1 -> good luck
+    void setGoodOrBadLuck(int good_or_bad_luck_);
 };
 
 #endif
