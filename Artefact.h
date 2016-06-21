@@ -20,10 +20,10 @@ using namespace std;
 
 /// Enum, that represent skills (Heroe's skills or Monster's skills
 typedef enum Skill
-{STRENGTH=0, ///< Strength
-AGILITY, ///< Agility
-HP ///< HealthPoints
-} E_Skill;
+ {STRENGTH=0, ///< Strength
+ AGILITY, ///< Agility
+ HP ///< HealthPoints
+ } E_Skill;
 
 /**
 * \class Artefact

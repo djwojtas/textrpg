@@ -2,22 +2,52 @@
 #include "Battle.h"
 #include "Travel.h"
 #include "Fate.h"
-#include <cstdlib>
-#include <ctime>
+#include "AskPlayer.h"
+#include <windows.h>
+#include <string>
 
 void Start::play(Heroe& subject)
 {
-    cout<<"Hello /"<<subject.getName()<<"/ Let the adventure begin!"<<endl<<endl;
+    string name;
+    int strength = -1, agility = -1, health = -1, points_to_spend = 16;
+    bool repeat_flag;
 
-    srand( time( NULL ) );
+    name=ask.askForString(
+                      "Welcome, traveler. What is your name?",
+                      "I don't think its your name."
+                      );
+    Sleep(300);
+    ask.say("Tell me something about yourself, " + name);
+    Sleep(350);
+    ask.narrate("You have 16 point to spend on strength, agility and hp, choose wisely.");
+    Sleep(500);
+    strength=ask.askForInt(
+                      "So, " + name + ", how strong are you?\n// 0-16 //",
+                      "Stop kidding traveler. Tell the truth.",
+                      0,points_to_spend);
+    points_to_spend -= strength;
+    Sleep(400);
+    agility=ask.askForInt("And how agile are you?\n// 0-" + to_string(points_to_spend) + " //",
+                          "Stop kidding traveler. Tell the truth.",
+                          0,points_to_spend);
+    points_to_spend -= agility;
+    Sleep(500);
+    if(points_to_spend<5) ask.say("U may be strong and agile, but you seem to be fragile..");
+      else if(points_to_spend<10) ask.say("U seem to be very balanced in your skills.");
+      else ask.say("Well, at least you seem very healthy");
+    health = points_to_spend;
+    Sleep(350);
+    ask.narrate("You gain " + to_string(health) + " health points");
+    Sleep(350);
+    ask.playerSay("You are right. But i should be leaving. Goodbye.");
+    Sleep(500);
+    ask.say("Good luck, " + name);
+    Sleep(1000);
 
-    int drawn_strength =( rand() % 8 ) + 2; //from 2 to 9
-    int drawn_agility =( rand() % 8 ) + 2;
-    int drawn_hp =( rand() % 8 ) + 2;
-
-    subject.setStrength(drawn_strength);
-    subject.setAgility(drawn_agility);
-    subject.setHP(drawn_hp);
+    subject.setName(name);
+    subject.setStrength(strength);
+    subject.setAgility(agility);
+    subject.setHP(health);
 }
 
 GameStep* Start::getNext()

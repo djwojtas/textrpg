@@ -42,7 +42,7 @@ private:
     int rune_count; ///< Amount of runed, which Heroe obtained
     string name; ///< Just Heroe name
 public:
-    /// \brief The class constructor
+    /// \brief Parametric class constructor
     ///
     /// \param name_ - Heroe's name
     /// \param strength_ - Heroe's strength
@@ -50,7 +50,15 @@ public:
     /// \param hp_ - Heroe's HP
     Heroe(string name_, int strength_, int agility_, int hp_);
 
+    /// \brief Default class constructor, sets everything to 0, name to ""
+    Heroe();
+
     //Setters
+    /// \brief Name setter
+    ///
+    /// \param name_ - name to set
+    void setName(string name_);
+
     /// \brief Strength setter
     ///
     /// \param strength_ - strength to set
