@@ -101,12 +101,12 @@ void Heroe::addArtefact(Artefact &artefact_to_add)
     if(artefact_to_add.getSkillBoost()==STRENGTH)
     {
         this->strength_boost=artefact_to_add.getBoostAmount();
-    } else
-    if (artefact_to_add.getSkillBoost()==AGILITY)
+    }
+    else if (artefact_to_add.getSkillBoost()==AGILITY)
     {
         this->agility_boost=artefact_to_add.getBoostAmount();
-    } else
-    if (artefact_to_add.getSkillBoost()==HP)
+    }
+    else if (artefact_to_add.getSkillBoost()==HP)
     {
         this->hp_boost=artefact_to_add.getBoostAmount();
     }
@@ -144,7 +144,9 @@ void Heroe::getDMG(int dmg_amount)
         dmg_amount-=getHPBoost();
         setHPBoost(0);
         setHP(getHP()-dmg_amount);
-    } else {
+    }
+    else
+    {
         setHPBoost(getHPBoost()-dmg_amount);
     }
 }
