@@ -41,7 +41,7 @@ GameStep* Travel::getNext()
     }
     else if (getChoice()==2)
     {
-        Fate* fate_after_travel=new Fate(BaseOfArtefacts);
+        Fate* fate_after_travel=new Fate();
 
         return fate_after_travel;
     }

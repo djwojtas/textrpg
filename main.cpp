@@ -2,7 +2,6 @@
 
 #include "Heroe.h"
 #include "Artefact.h"
-#include "ArtefactBase.h"
 #include "Riddle.h"
 #include "Start.h"
 #include "Monster.h"
@@ -16,7 +15,6 @@ using namespace std;
 int main()
 {
     //(BaseOfArtefacts.getArtefact(1)).printArtefact();
-    ArtefactBase BaseOfArtefacts;
 
     vector<Riddle> Riddles;
     Start main_adventure;
