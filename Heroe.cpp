@@ -19,6 +19,26 @@ Heroe::Heroe(string name_, int strength_, int agility_, int hp_)
     rune_count=0;
 }
 
+Heroe::Heroe()
+{
+    name="";
+
+    strength=0;
+    agility=0;
+    hp=0;
+
+    strength_boost=0;
+    agility_boost=0;
+    hp_boost=0;
+
+    rune_count=0;
+}
+
+void Heroe::setName(string name_)
+{
+  name=name_;
+}
+
 void Heroe::setStrength(int strength_)
 {
     strength=strength_;
