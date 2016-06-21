@@ -17,7 +17,6 @@ using namespace std;
 * \author RPGteam
 * \date 21.06.2016
 * \brief AskPlayer class gives API for communication with player
-*
 *   AskPlayer handles mostly two things. It takes care of formating output, like when to add endline or insert some signs.
 *   Also, it can be used for getting information from player and assuring that data is (probably) valid.
 *   Class should be used by calling "ask" global object. Eg. ask.say("Hello");

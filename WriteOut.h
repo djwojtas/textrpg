@@ -19,7 +19,6 @@ using namespace std;
 * \author RPGteam
 * \date 21.06.2016
 * \brief WriteOut class provide ability of sequential text writing (letter after letter)
-*
 *   WriteOut can be used like mostly like cout (but accepts only strings, use to_string(any type) to convert)
 *   to write text letter after letter with specified time delay (default is 30)
 *   Class should be used by calling "write" global object. Eg. write<<"Hello"; or write.setSleepTime(60);
