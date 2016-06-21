@@ -86,4 +86,5 @@ string AskPlayer::askForString(string message, string fail_message)
   return answer;
 }
 
+/** \brief Only one existing AskPlayer object, used to interact with player */
 AskPlayer ask;

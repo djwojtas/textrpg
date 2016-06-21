@@ -44,6 +44,7 @@ public:
   friend WriteOut &operator<<(WriteOut &output, const string input);
 };
 
+/** \brief Only one existing WriteOut object, used to write out text letter by letter */
 extern WriteOut write;
 
 #endif

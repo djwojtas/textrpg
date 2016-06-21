@@ -52,7 +52,7 @@ public:
   /// \param message - question that computer should ask
   /// \param fail_message - sentence that computer should say after invalid answer
   /// \param minimum - minimum of range that INT should be from (more or equal)
-  /// \param message - maximum of range that INT should be from (less or equal)
+  /// \param maximum - maximum of range that INT should be from (less or equal)
   /// \return Returns int that player provided
   int askForInt(string message, string fail_message, int minimum, int maximum);
 
@@ -62,7 +62,7 @@ public:
   /// \param message - question that computer should ask
   /// \param fail_message - sentence that computer should say after invalid answer
   /// \param minimum - minimum of range that double should be from (more or equal)
-  /// \param message - maximum of range that double should be from (less or equal)
+  /// \param maximum - maximum of range that double should be from (less or equal)
   /// \return Returns double that player provided
   double askForDouble(string message, string fail_message, double minimum, double maximum);
 
@@ -75,6 +75,7 @@ public:
   string askForString(string message, string fail_message);
 };
 
-extern AskPlayer ask;
+/** \brief Only one existing AskPlayer object, used to interact with player */
+extern AskPlayer ask ;
 
 #endif
