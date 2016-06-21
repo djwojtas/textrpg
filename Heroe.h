@@ -44,47 +44,47 @@ private:
 public:
     /// \brief The class constructor
     ///
-    /// \param n - Heroe's name
-    /// \param s - Heroe's strength
-    /// \param a - Heroe's agility
-    /// \param hpoints - Heroe's HP
-    Heroe(string n, int s, int a, int hpoints);
+    /// \param name_ - Heroe's name
+    /// \param strength_ - Heroe's strength
+    /// \param agility_ - Heroe's agility
+    /// \param hp_ - Heroe's HP
+    Heroe(string name_, int strength_, int agility_, int hp_);
 
     //Setters
     /// \brief Strength setter
     ///
-    /// \param s - strength to set
-    void setStrength(int s);
+    /// \param strength_ - strength to set
+    void setStrength(int strength_);
 
     /// \brief Agility setter
     ///
-    /// \param a - agility to set
-    void setAgility(int a);
+    /// \param agility_ - agility to set
+    void setAgility(int agility_);
 
     /// \brief HP setter
     ///
-    /// \param hpoints - HP to set
-    void setHP(int hpoints);
+    /// \param hp_ - HP to set
+    void setHP(int hp_);
 
     /// \brief Boosted-Strength setter
     ///
-    /// \param sb - Boosted-Strength to set
-    void setStrengthBoost(int sb);
+    /// \param strength_boost_ - Boosted-Strength to set
+    void setStrengthBoost(int strength_boost_);
 
     /// \brief Boosted-Agility setter
     ///
-    /// \param ab - Boosted-Agility to set
-    void setAgilityBoost(int ab);
+    /// \param agility_boost_ - Boosted-Agility to set
+    void setAgilityBoost(int agility_boost_);
 
     /// \brief Boosted-HP setter
     ///
-    /// \param hpb - Boosted-HP to set
-    void setHPBoost(int hpb);
+    /// \param hp_boost_ - Boosted-HP to set
+    void setHPBoost(int hp_boost_);
 
     /// \brief Rune-Count setter
     ///
-    /// \param r - Rune-Count to set
-    void setRuneCount(int r);
+    /// \param rune_count_ - Rune-Count to set
+    void setRuneCount(int rune_count_);
     //END OF SETTERS-------------
 
     //Getters
@@ -132,8 +132,8 @@ public:
     //Utility
     /// \brief Function used to add new Artefact to the Heroe's list
     ///
-    /// \param ar - Artefact, which will be added to the list
-    void addArtefact(Artefact &ar);
+    /// \param artefact_to_add - Artefact, which will be added to the list
+    void addArtefact(Artefact &artefact_to_add);
 
     /// \brief Simple printing base info about Heroe on the screen
     void printHeroe() const;

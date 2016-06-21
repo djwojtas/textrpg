@@ -40,30 +40,25 @@ private:
 public:
     /// \brief The class constructor
     ///
-    /// \param n - name of the created Artefact
-    /// \param skill_input - which skill is going to be strengthened by artefact
-    /// \param ba - boost amount
-    Artefact(string n, E_Skill skill_input, int ba)
-    {
-        name=n;
-        skill_to_boost=skill_input;
-        boost_amount=ba;
-    }
+    /// \param name_ - name of the created Artefact
+    /// \param skill_to_boost_ - which skill is going to be strengthened by artefact
+    /// \param boost_amount_ - boost amount
+    Artefact(string name_, E_Skill skill_to_boost_, int boost_amount_);
 
     /// \brief Name setter
     ///
-    /// \param n - name to set
-    void setName(string n);
+    /// \param name_ - name to set
+    void setName(string name_);
 
     /// \brief Skill-to-boost setter
     ///
-    /// \param s - Skill-to-boost to set
-    void setSkillBoost(E_Skill s);
+    /// \param skill_to_boost_ - Skill-to-boost to set
+    void setSkillBoost(E_Skill skill_to_boost_);
 
     /// \brief Boost amount setter
     ///
-    /// \param a - Boost amount to set
-    void setBoostAmount(int a);
+    /// \param boost_amount_ - Boost amount to set
+    void setBoostAmount(int boost_amount_);
 
     /// \brief Name getter
     ///

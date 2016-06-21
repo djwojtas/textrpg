@@ -50,9 +50,9 @@ int Fate::getGoodOrBadLuck()
     return good_or_bad_luck;
 }
 
-void Fate::setGoodOrBadLuck(int s)
+void Fate::setGoodOrBadLuck(int good_or_bad_luck_)
 {
-    good_or_bad_luck=s;
+    good_or_bad_luck=good_or_bad_luck_;
 }
 
 GameStep* Fate::getNext()

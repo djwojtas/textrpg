@@ -4,13 +4,13 @@
 
 using namespace std;
 
-Heroe::Heroe(string n, int s, int a, int hpoints)
+Heroe::Heroe(string name_, int strength_, int agility_, int hp_)
 {
-    name=n;
+    name=name_;
 
-    strength=s;
-    agility=a;
-    hp=hpoints;
+    strength=strength_;
+    agility=agility_;
+    hp=hp_;
 
     strength_boost=0;
     agility_boost=0;
@@ -19,39 +19,39 @@ Heroe::Heroe(string n, int s, int a, int hpoints)
     rune_count=0;
 }
 
-void Heroe::setStrength(int s)
+void Heroe::setStrength(int strength_)
 {
-    strength=s;
+    strength=strength_;
 }
 
-void Heroe::setAgility(int a)
+void Heroe::setAgility(int agility_)
 {
-    agility=a;
+    agility=agility_;
 }
 
-void Heroe::setHP(int hpoints)
+void Heroe::setHP(int hp_)
 {
-    hp=hpoints;
+    hp=hp_;
 }
 
-void Heroe::setStrengthBoost(int sb)
+void Heroe::setStrengthBoost(int strength_boost_)
 {
-    strength_boost=sb;
+    strength_boost=strength_boost_;
 }
 
-void Heroe::setAgilityBoost(int ab)
+void Heroe::setAgilityBoost(int agility_boost_)
 {
-    agility_boost=ab;
+    agility_boost=agility_boost_;
 }
 
-void Heroe::setHPBoost(int hpb)
+void Heroe::setHPBoost(int hp_boost_)
 {
-    hp_boost=hpb;
+    hp_boost=hp_boost_;
 }
 
-void Heroe::setRuneCount(int r)
+void Heroe::setRuneCount(int rune_count_)
 {
-    rune_count=r;
+    rune_count=rune_count_;
 }
 
 int Heroe::getStrength() const
@@ -94,21 +94,21 @@ string Heroe::getName() const
     return name;
 }
 
-void Heroe::addArtefact(Artefact &ar)
+void Heroe::addArtefact(Artefact &artefact_to_add)
 {
-    artefact_list.push_back(ar);
+    artefact_list.push_back(artefact_to_add);
 
-    if(ar.getSkillBoost()==STRENGTH)
+    if(artefact_to_add.getSkillBoost()==STRENGTH)
     {
-        this->strength_boost=ar.getBoostAmount();
+        this->strength_boost=artefact_to_add.getBoostAmount();
     } else
-    if (ar.getSkillBoost()==AGILITY)
+    if (artefact_to_add.getSkillBoost()==AGILITY)
     {
-        this->agility_boost=ar.getBoostAmount();
+        this->agility_boost=artefact_to_add.getBoostAmount();
     } else
-    if (ar.getSkillBoost()==HP)
+    if (artefact_to_add.getSkillBoost()==HP)
     {
-        this->hp_boost=ar.getBoostAmount();
+        this->hp_boost=artefact_to_add.getBoostAmount();
     }
 }
 

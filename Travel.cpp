@@ -4,9 +4,9 @@
 
 using namespace std;
 
-void Travel::setChoice(int c)
+void Travel::setChoice(int choice_)
 {
-    choice=c;
+    choice=choice_;
 }
 
 int Travel::getChoice() const
@@ -23,7 +23,7 @@ void Travel::play(Heroe& subject)
     int user_choice=0;
     while(((user_choice!=1)&&(user_choice!=2))||(cin.fail()))
     {
-        cout<<"Type 1 /to set off to dangerous areas/ or 2 /to travel by safe roads/ :";
+        cout<<"Type 1 /to set off to dangerous areas/ or 2 /to travel by safe roads/ : ";
         std::cin.clear();
         std::cin.sync();
         cin>>user_choice;

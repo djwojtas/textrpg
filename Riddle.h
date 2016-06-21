@@ -29,9 +29,9 @@ class Riddle:public GameStep
 public:
     /// \brief The class constructor
     ///
-    /// \param rt - Content of Riddle
-    /// \param ca - Correct Answer
-    Riddle(string rt, string ca);
+    /// \param riddle_text_ - Content of Riddle
+    /// \param correct_answer_ - Correct Answer
+    Riddle(string riddle_text_, string correct_answer_);
 
     /// \brief Riddle Text Getter
     ///

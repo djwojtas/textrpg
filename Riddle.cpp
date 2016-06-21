@@ -2,10 +2,10 @@
 
 using namespace std;
 
-Riddle::Riddle(string rt, string ca)
+Riddle::Riddle(string riddle_text_, string correct_answer_)
 {
-    riddle_text=rt;
-    correct_answer=ca;
+    riddle_text=riddle_text_;
+    correct_answer=correct_answer_;
 }
 
 string Riddle::getRiddleText() const
