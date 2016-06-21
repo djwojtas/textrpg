@@ -1,4 +1,5 @@
 #include "Fate.h"
+#include "Travel.h"
 #include "ArtefactBase.h"
 
 #include <ctime>
@@ -57,5 +58,6 @@ void Fate::setGoodOrBadLuck(int good_or_bad_luck_)
 
 GameStep* Fate::getNext()
 {
-    /*Next step*/
+    GameStep* to_return = new Travel();
+    return to_return;
 }

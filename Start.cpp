@@ -1,4 +1,7 @@
 #include "Start.h"
+#include "Battle.h"
+#include "Travel.h"
+#include "Fate.h"
 #include <cstdlib>
 #include <ctime>
 
@@ -19,5 +22,6 @@ void Start::play(Heroe& subject)
 
 GameStep* Start::getNext()
 {
-    /*Losowanie Battle, Travel, Fate*/
+    GameStep* to_return = new Travel();
+    return to_return;
 }

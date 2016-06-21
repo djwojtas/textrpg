@@ -1,5 +1,12 @@
 #include "Riddle.h"
 
+#include "Battle.h"
+#include "Fate.h"
+#include "Travel.h"
+
+#include <cstdlib>
+#include <ctime>
+
 using namespace std;
 
 Riddle::Riddle(string riddle_text_, string correct_answer_)
@@ -43,5 +50,6 @@ void Riddle::play(Heroe& subject)
 
 GameStep* Riddle::getNext()
 {
-    /*Next step*/
+    GameStep* to_return = new Travel();
+    return to_return;
 }
