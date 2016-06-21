@@ -8,6 +8,8 @@
 
 using namespace std;
 
+extern RiddleBase BaseOfRiddles;
+
 void Battle::play(Heroe& subject)
 {
     int drawn_strength =( rand() % 8 ) + 2; //from 2 to 9

@@ -4,12 +4,13 @@
 #include <ctime>
 #include <cstdlib>
 
+extern ArtefactBase BaseOfArtefacts;
+
 using namespace std;
 
-Fate::Fate(ArtefactBase *BaseOfArtefacts_)
+Fate::Fate()
 {
     good_or_bad_luck=0;
-    BaseOfArtefacts=BaseOfArtefacts_;
 }
 
 void Fate::play(Heroe& subject)
@@ -21,8 +22,8 @@ void Fate::play(Heroe& subject)
     if(good_or_bad_luck==1) //Szczescie
     {
         cout<<"Good fortune!"<<endl;
-        int index_of_artefact=( rand() % BaseOfArtefacts->getSize() );
-        Artefact drawn_artefact=BaseOfArtefacts->getArtefact(index_of_artefact);
+        int index_of_artefact=( rand() % BaseOfArtefacts.getSize() );
+        Artefact drawn_artefact=BaseOfArtefacts.getArtefact(index_of_artefact);
 
         subject.addArtefact(drawn_artefact);
         cout<<"you've received: ";
