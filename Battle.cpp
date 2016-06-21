@@ -1,6 +1,7 @@
 #include "Battle.h"
 #include "Monster.h"
 #include "RiddleBase.h"
+#include "MonsterBase.h"
 
 #include <cstdlib>
 #include <ctime>
@@ -9,14 +10,11 @@
 using namespace std;
 
 extern RiddleBase BaseOfRiddles;
+extern MonsterBase BaseOfMonsters;
 
 void Battle::play(Heroe& subject)
 {
-    int drawn_strength =( rand() % 8 ) + 2; //from 2 to 9
-    int drawn_agility =( rand() % 8 ) + 2;
-    int drawn_hp =( rand() % 18 ) + 2; //from 2 to 19
-
-    Monster random_monster(drawn_strength, drawn_agility, drawn_hp, "Random Monster");
+    Monster random_monster = BaseOfMonsters.getMonster( rand() % BaseOfMonsters.getSize() );
 
     cout<<random_monster.getName()<<" attacked you!"<<endl<<endl;
 
