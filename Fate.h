@@ -29,9 +29,9 @@ public:
     /// \brief Default class constructor
     Fate();
 
-    /// \brief Play the action connected with Fate game state
+    /// \brief Heroe is forced to play one of few games. Success could lead to pleasant things, however failure would probably lead to unpleasant moments
     ///
-    /// \param subject - Heroe, who will be subject of good or bad luck
+    /// \param subject - Heroe, who will play game
     void play(Heroe& subject);
 
     /// \brief Unfinished function TBD!
