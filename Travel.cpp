@@ -1,6 +1,8 @@
 #include "Travel.h"
 #include "Battle.h"
 #include "Fate.h"
+#include "AskPlayer.h"
+#include "WriteOut.h"
 
 using namespace std;
 
@@ -16,18 +18,12 @@ int Travel::getChoice() const
 
 void Travel::play(Heroe& subject)
 {
-    cout<<endl;
-    cout<<"-----TRAVEL!-----"<<endl<<endl;
+    write<<"\n\n"<<subject.getName()<<"!"<<" You are about to set off for travel!\n\n";
 
-
-    int user_choice=0;
-    while(((user_choice!=1)&&(user_choice!=2))||(cin.fail()))
-    {
-        cout<<"Type 1 /to set off to dangerous areas/ or 2 /to travel by safe roads/ : ";
-        std::cin.clear();
-        std::cin.sync();
-        cin>>user_choice;
-    }
+    int user_choice=ask.askForInt(
+                      "Type 1 /to set off to dangerous areas/ or 2 /to travel by safe roads/: ",
+                      "You do not like sticking to rules, huh?",
+                      1,2);
 
     this->setChoice(user_choice);
 }
@@ -42,7 +38,6 @@ GameStep* Travel::getNext()
     else if (getChoice()==2)
     {
         Fate* fate_after_travel=new Fate();
-
         return fate_after_travel;
     }
 }

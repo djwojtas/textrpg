@@ -45,4 +45,7 @@ public:
 
 };
 
+/** \brief Only one existing MonsterBase object, used to store Monsters */
+extern MonsterBase BaseOfMonsters;
+
 #endif

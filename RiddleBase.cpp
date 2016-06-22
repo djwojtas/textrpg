@@ -32,5 +32,4 @@ int RiddleBase::getSize()
     return base.size();
 }
 
-/** \brief Only one existing RiddleBase object, used to store Riddles */
 RiddleBase BaseOfRiddles;

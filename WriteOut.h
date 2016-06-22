@@ -25,7 +25,7 @@ using namespace std;
 */
 class WriteOut
 {
-  int sleep_time = 30; ///< How much delay in miliseconds should program wait between printing letters
+  int sleep_time = 10; ///< How much delay in miliseconds should program wait between printing letters
 
 public:
   /// \brief Sleep time setter

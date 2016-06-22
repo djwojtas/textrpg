@@ -3,6 +3,8 @@
 #include "Battle.h"
 #include "Fate.h"
 #include "Travel.h"
+#include "WriteOut.h"
+#include "AskPlayer.h"
 
 #include <cstdlib>
 #include <ctime>
@@ -27,24 +29,19 @@ string Riddle::getCorrectAnswer() const
 
 void Riddle::play(Heroe& subject)
 {
-    cout<<endl;
-    cout<<"-----RIDDLE!-----"<<endl<<endl;
+    write<<"-----RIDDLE!-----\n\n";
 
-    cout<<getRiddleText()<<endl<<endl;
+    write<<getRiddleText()<<"\n";
 
-    cout<<"Type in your answer: ";
-
-    string user_answer;
-
-    cin>>user_answer;
+    string user_answer = ask.askForString("Type in your answer: ", "Excuse me, i did not hear you? Could you repeat?");
 
     if(user_answer==correct_answer)
     {
-        cout<<"Correct! In reward, you receive rune!"<<endl<<endl;
+        write<<"Correct! In reward, you receive one rune!\n\n";
         int current_rune_count=subject.getRuneCount();
         subject.setRuneCount(current_rune_count+1);
     } else {
-        cout<<"Incorrect!"<<endl<<endl;
+        write<<"Incorrect! Maybe next time you will be successful... \n\n";
     }
 }
 
