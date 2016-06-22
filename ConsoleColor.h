@@ -7,8 +7,8 @@
 */
 // -------------------------------------------------------------------------
 
-#ifndef MONSTER_BASE_H
-#define MONSTER_BASE_H
+#ifndef CONSOLE_COLOR_H
+#define CONSOLE_COLOR_H
 
 // -------------------------------------------------------------------------
 
@@ -37,7 +37,7 @@ public:
     void setColor(int color);
 };
 
-/** \brief Only one existing MonsterBase object, used to store Monsters */
+/** \brief Only one existing ConsoleColor object, used to change text color */
 extern ConsoleColor color;
 
 #endif
