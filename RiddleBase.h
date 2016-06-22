@@ -46,4 +46,7 @@ public:
 
 };
 
+/** \brief Only one existing RiddleBase object, used to store Riddles */
+extern RiddleBase BaseOfRiddles;
+
 #endif

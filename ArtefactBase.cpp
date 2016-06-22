@@ -49,5 +49,4 @@ int ArtefactBase::getSize()
     return base.size();
 }
 
-/** \brief Only one existing ArtefactBase object, used to store Artefacts */
 ArtefactBase BaseOfArtefacts;

@@ -15,11 +15,16 @@ using namespace std;
 
 int main()
 {
-  Heroe main_character;
-  Start main_adventure;
+    Heroe main_character;
+    Start main_adventure;
+    GameStep* current_state = &main_adventure;
 
-  main_adventure.play(main_character);
+    while(true)
+    {
+        if(main_character.getRuneCount()>=7) { write<<"Congratulations! You have succeeded!"; break; }
+        current_state->play(main_character);
+        current_state=current_state->getNext();
+    }
 
-
-  return 0;
+    return 0;
 }

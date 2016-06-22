@@ -45,4 +45,7 @@ public:
 
 };
 
+/** \brief Only one existing ArtefactBase object, used to store Artefacts */
+extern ArtefactBase BaseOfArtefacts;
+
 #endif

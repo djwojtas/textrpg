@@ -4,9 +4,9 @@ using namespace std;
 
 MonsterBase::MonsterBase()
 {
-    Monster first(10, 10, 10, "Centaur");
-    Monster second(5, 5, 5, "Harpyia");
-    Monster third(20, 20, 20, "Griffin");
+    Monster first(1, 1, 50, "Centaur");
+    Monster second(1, 1, 50, "Harpyia");
+    Monster third(1, 1, 50, "Griffin");
 
     base.push_back(first);
     base.push_back(second);
@@ -30,5 +30,4 @@ int MonsterBase::getSize()
     return base.size();
 }
 
-/** \brief Only one existing MonsterBase object, used to store Monsters */
 MonsterBase BaseOfMonsters;
