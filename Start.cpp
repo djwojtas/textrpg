@@ -36,17 +36,21 @@ void Start::play(Heroe& subject)
       else if(points_to_spend<10) ask.say("U seem to be very balanced in your skills.");
       else ask.say("Well, at least you seem very healthy");
     health = points_to_spend;
-    Sleep(350);
+    Sleep(500);
     ask.narrate("You gain " + to_string(health) + " health points");
-    Sleep(350);
+    Sleep(500);
     ask.playerSay("You are right. But i should be leaving.");
     ask.say("Wait! Drink this! This potion will make you stronger.");
+    Sleep(200);
     ask.playerSay("Right...    .     .");
+    Sleep(500);
     ++strength;
     ++agility;
     ++health;
     ask.narrate("Your stats increased by 1");
+    Sleep(500);
     ask.playerSay("Wow, thank you. But now i must leave. Goodbye.");
+    Sleep(350);
     ask.say("Good luck, " + name);
     ask.endSection();
 
