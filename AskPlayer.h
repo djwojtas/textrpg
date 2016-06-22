@@ -61,6 +61,7 @@ public:
   /// \param fail_message - sentence that computer should say after invalid answer
   /// \param minimum - minimum of range that INT should be from (more or equal)
   /// \param maximum - maximum of range that INT should be from (less or equal)
+  /// \param narrate_message - message in which you should explain what to do, for example "type 1-4"
   /// \return Returns int that player provided
   int askForInt(string message, string fail_message, int minimum, int maximum, string narrate_message = "");
 
@@ -71,6 +72,7 @@ public:
   /// \param fail_message - sentence that computer should say after invalid answer
   /// \param minimum - minimum of range that double should be from (more or equal)
   /// \param maximum - maximum of range that double should be from (less or equal)
+  /// \param narrate_message - message in which you should explain what to do, for example "type 1-4"
   /// \return Returns double that player provided
   double askForDouble(string message, string fail_message, double minimum, double maximum, string narrate_message = "");
 
@@ -79,6 +81,7 @@ public:
   * error) function will return. If not - fail_message will be written and process starts again */
   /// \param message - question that computer should ask
   /// \param fail_message - sentence that computer should say after invalid answer
+  /// \param narrate_message - message in which you should explain what to do, for example "if you type x then y, otherwise z"
   /// \return Returns string that player provided
   string askForString(string message, string fail_message, string narrate_message = "");
 
