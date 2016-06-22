@@ -44,7 +44,7 @@ void Battle::play(Heroe& subject, Monster opponent)
                                  "I've got no time, give correct answer!",
                                  1, 3,
                                  "1 - Attack\n  DMG = STR and some AGI, CHANCE = AGI)\n"
-                                 "2 - Defend\n  increases AGI by 3, you lose 1 per turn\n"
+                                 "2 - Defend\n  increases AGI by 3, you lose 1 in the end of turn\n"
                                  "3 - Go for critical strike\n  DMG = STR + HP, CHANCE uses AGI and HP, less hp is more DMG and bigger CHANCE"
                                  );
 
@@ -53,8 +53,9 @@ void Battle::play(Heroe& subject, Monster opponent)
           int heroe_dmg = ceil((double)(heroe_strength_total + ceil((rand()%(heroe_agility_total+subject_agility_boost) + ((heroe_agility_total+subject_agility_boost)/2))*0.25))*((double)(rand()% 3 + 7)/5.0));
           Sleep(500);
           int chance = rand()%101;
-          int chance_boost = subject.getAgility() + subject_agility_boost + 50;
+          int chance_boost = subject.getAgility() + subject_agility_boost + 50 - opponent.getAgility() - monster_agility_boost;
           if(chance_boost>95) chance_boost=95;
+          if(chance_boost<30) chance_boost=30;
 
           if(chance>chance_boost)
           {
@@ -99,8 +100,9 @@ void Battle::play(Heroe& subject, Monster opponent)
           int monster_dmg = ceil((double)(monster_strength_total + ceil((rand()%(monster_agility_total+monster_agility_boost) + ((monster_agility_total+monster_agility_boost)/2))*0.25))*((double)(rand()% 3 + 7)/5.0));
           Sleep(500);
           int chance = rand()%101;
-          int chance_boost = opponent.getAgility() + monster_agility_boost + 50;
+          int chance_boost = opponent.getAgility() + monster_agility_boost + 50 - subject.getAgility() - subject_agility_boost;
           if(chance_boost>95) chance_boost=95;
+          if(chance_boost<5) chance_boost=5;
 
           if(chance>chance_boost)
           {
@@ -122,8 +124,9 @@ void Battle::play(Heroe& subject, Monster opponent)
           int monster_dmg = ceil((double)((double)monster_strength_total*(((double)opponent.getMaxHP())/((double)opponent.getHP())))*((double)(rand()% 3 + 7)/5.0));
           Sleep(500);
           int chance = rand()%101;
-          int chance_boost = (opponent.getAgility()+monster_agility_boost)/2 + 10 + (25 * (((double)opponent.getMaxHP())/((double)opponent.getHP())));
+          int chance_boost = (opponent.getAgility()+monster_agility_boost-subject.getAgility()-subject_agility_boost)/2 + 10 + (25 * (((double)opponent.getMaxHP())/((double)opponent.getHP())));
           if(chance_boost>50) chance_boost=50;
+          if(chance_boost<10) chance_boost=10;
 
           if(chance>chance_boost)
           {
@@ -138,6 +141,7 @@ void Battle::play(Heroe& subject, Monster opponent)
 
         if(monster_agility_boost) --monster_agility_boost;
         if(subject_agility_boost) --subject_agility_boost;
+
         flag_win = true;
     }
 
