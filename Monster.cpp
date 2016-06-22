@@ -48,6 +48,13 @@ void Monster::setName(string name_)
     name=name_;
 }
 
+bool Monster::getDMG(int dmg_amount)
+{
+    hp -= dmg_amount;
+    if(hp<=0) return true;
+      else return false;
+}
+
 void Monster::printMonster() const
 {
     cout<<endl;

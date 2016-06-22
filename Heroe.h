@@ -32,6 +32,7 @@ private:
     int strength; ///< Heroe strength
     int agility; ///< Heroe agility
     int hp; ///< Heroe Health Points
+    int max_hp; ///< Heroe Maximum HP
 
     //Artefact boosts
     int strength_boost; ///< Amount of boosted strength
@@ -73,6 +74,11 @@ public:
     ///
     /// \param hp_ - HP to set
     void setHP(int hp_);
+
+    /// \brief MAX HP setter
+    ///
+    /// \param max_hp_ - HP to set
+    void setMaxHP(int max_hp_);
 
     /// \brief Boosted-Strength setter
     ///
@@ -126,6 +132,11 @@ public:
     /// \return Heroe's Boosted-HP
     int getHPBoost() const;
 
+    /// \brief Max HP getter
+    ///
+    /// \return Heroe's max HP
+    int getMaxHP() const;
+
     /// \brief Rune-Count getter
     ///
     /// \return - Amount of Runes possessed by Heroe
@@ -154,7 +165,7 @@ public:
     /// \brief Function, which is used, when Heroe receives Damage
     ///
     /// \param dmg_amount - How much damage is received
-    void getDMG(int dmg_amount);
+    bool getDMG(int dmg_amount);
 
     /// \brief Function, which is used, when Heroe loses Artefact due to FATE ;'(
     void loseArtefacts();

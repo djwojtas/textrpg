@@ -11,6 +11,7 @@ Heroe::Heroe(string name_, int strength_, int agility_, int hp_)
     strength=strength_;
     agility=agility_;
     hp=hp_;
+    max_hp=hp_;
 
     strength_boost=0;
     agility_boost=0;
@@ -26,6 +27,7 @@ Heroe::Heroe()
     strength=0;
     agility=0;
     hp=0;
+    max_hp=0;
 
     strength_boost=0;
     agility_boost=0;
@@ -52,6 +54,11 @@ void Heroe::setAgility(int agility_)
 void Heroe::setHP(int hp_)
 {
     hp=hp_;
+}
+
+void Heroe::setMaxHP(int max_hp_)
+{
+    max_hp=max_hp_;
 }
 
 void Heroe::setStrengthBoost(int strength_boost_)
@@ -87,6 +94,11 @@ int Heroe::getAgility() const
 int Heroe::getHP() const
 {
     return hp;
+}
+
+int Heroe::getMaxHP() const
+{
+    return max_hp;
 }
 
 int Heroe::getStrengthBoost() const
@@ -157,18 +169,12 @@ void Heroe::printHeroe() const
     }
 }
 
-void Heroe::getDMG(int dmg_amount)
+bool Heroe::getDMG(int dmg_amount)
 {
-    if(dmg_amount>getHPBoost())
-    {
-        dmg_amount-=getHPBoost();
-        setHPBoost(0);
-        setHP(getHP()-dmg_amount);
-    }
-    else
-    {
-        setHPBoost(getHPBoost()-dmg_amount);
-    }
+    hp -= dmg_amount;
+    cout<<"\n\n"<<dmg_amount<<"\n\n";
+    if(hp<=0) return true;
+      else return false;
 }
 
 void Heroe::loseArtefacts()

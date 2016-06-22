@@ -86,6 +86,11 @@ public:
     //Utility
     /// \brief Simple printing base info about Monster on the screen
     void printMonster() const;
+
+    /// \brief Function, which is used, when Monster receives Damage
+    ///
+    /// \param dmg_amount - How much damage is received
+    bool getDMG(int dmg_amount);
 };
 
 #endif // MONSTER_H
