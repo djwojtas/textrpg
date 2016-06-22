@@ -47,13 +47,13 @@ void Battle::play(Heroe& subject)
 
     if(flag_win)
     {
-        ask.endChapter();
-        ask.say("You Died! RIP[*]");
-        exit(0);
+        ask.say("You Defeated " + random_monster.getName() + "\n\n");
     }
     else
     {
-        ask.say("You Defeated " + random_monster.getName() + "\n\n");
+        ask.endChapter();
+        ask.say("You Died! RIP[*]");
+        exit(0);
     }
 }
 
