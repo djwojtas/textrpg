@@ -143,6 +143,11 @@ public:
     /// \param artefact_to_add - Artefact, which will be added to the list
     void addArtefact(Artefact &artefact_to_add);
 
+    /// \brief Function, which is used to learn about amount of Artefacts, that Heroe have
+    ///
+    /// \return amount of Artefacts, that Heroe have
+    int getAmountOfArtefacts();
+
     /// \brief Simple printing base info about Heroe on the screen
     void printHeroe() const;
 
@@ -153,6 +158,12 @@ public:
 
     /// \brief Function, which is used, when Heroe loses Artefact due to FATE ;'(
     void loseArtefacts();
+
+    /// \brief Function used to delete certain Artefact from Heroe's inventory
+    ///
+    /// \param index - Which Artefact should be deleted
+    /// \return deleted Artefact
+    Artefact loseArtefact(int index);
 };
 
 #endif

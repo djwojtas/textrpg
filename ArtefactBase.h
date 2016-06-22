@@ -38,6 +38,16 @@ public:
     /// \return some artefact from the base
     Artefact getArtefact(int index);
 
+    /// \brief Function which allows to "delete" some artefact from the base
+    ///
+    /// \param index - index of artefact, which will be deleted
+    void popArtefact(int index);
+
+    /// \brief Function which allows to add some artefact to the base
+    ///
+    /// \param to_push - Artefact, which will be stored in base
+    void pushArtefact(Artefact to_push);
+
     /// \brief Function which returns size of our Artefact base
     ///
     /// \return Amount of artefacts in our base
