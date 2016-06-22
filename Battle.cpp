@@ -7,6 +7,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <windows.h>
+#include  "AskPlayer.h"
 
 using namespace std;
 
@@ -14,7 +15,7 @@ void Battle::play(Heroe& subject)
 {
     Monster random_monster = BaseOfMonsters.getMonster( rand() % BaseOfMonsters.getSize() );
 
-    write<<"\n\n"<<random_monster.getName()<<" attacked you!\n\n";
+    ask.say(random_monster.getName() + " attacked you!");
 
     int heroe_strength_total = subject.getStrength()+subject.getStrengthBoost();
     int heroe_agility_total = subject.getAgility()+subject.getAgilityBoost();
@@ -23,8 +24,14 @@ void Battle::play(Heroe& subject)
     int monster_strength_total = random_monster.getStrength();
     int monster_agility_total = random_monster.getAgility();
     int monster_hp_total = random_monster.getHP();
+
     while(true)
     {
+        ask.printFight(subject, random_monster);
+
+
+
+
         int heroe_dmg = heroe_strength_total*(rand()%heroe_agility_total);
         write<<subject.getName()<<" cause "<<to_string(heroe_dmg)<<" DMG! \n";
 
