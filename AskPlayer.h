@@ -85,7 +85,9 @@ public:
   /// \brief Prints actual fight - names and stats
   /// \param subject - Heroe object that will be used to get stats from
   /// \param monster_to_print - Monster object that will be used to get stats from
-  void printFight(Heroe& subject, Monster& monster_to_print);
+  /// \param subject_agility_boost - heroe agility received from defending
+  /// \param monster_agility_boost - monster agility received from defending
+  void printFight(Heroe& subject, Monster& monster_to_print, int subject_agility_boost, int monster_agility_boost);
 };
 
 /** \brief Only one existing AskPlayer object, used to interact with player */

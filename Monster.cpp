@@ -5,6 +5,7 @@ Monster::Monster(int strength_, int agility_, int hp_, string name_)
     strength=strength_;
     agility=agility_;
     hp=hp_;
+    max_hp=hp_;
     name=name_;
 }
 
@@ -21,6 +22,11 @@ int Monster::getAgility() const
 int Monster::getHP() const
 {
     return hp;
+}
+
+int Monster::getMaxHP() const
+{
+    return max_hp;
 }
 
 string Monster::getName() const
@@ -41,6 +47,11 @@ void Monster::setStrength(int strength_)
 void Monster::setHP(int hp_)
 {
     hp=hp_;
+}
+
+void Monster::setMaxHP(int max_hp_)
+{
+    max_hp=max_hp_;
 }
 
 void Monster::setName(string name_)

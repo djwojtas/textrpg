@@ -117,9 +117,9 @@ string AskPlayer::askForString(string message, string fail_message, string narra
     return answer;
 }
 
-void AskPlayer::printFight(Heroe& subject, Monster& monster_to_print)
+void AskPlayer::printFight(Heroe& subject, Monster& monster_to_print, int subject_agility_boost, int monster_agility_boost)
 {
-  cout<<"\n     "<<subject.getName();
+  cout<<"\n\n     "<<subject.getName();
   for(int i=0; i<(35-(subject.getName().size())); ++i) cout<<" ";
   cout<<monster_to_print.getName();
 
@@ -127,9 +127,9 @@ void AskPlayer::printFight(Heroe& subject, Monster& monster_to_print)
   for(int i=0; i<(27-((subject.getStrength()/10)+1)-((subject.getStrengthBoost()/10)+1)); ++i) cout<<" ";
   cout<<"STR: "<<monster_to_print.getStrength();
 
-  cout<<"\n     AGI: "<<subject.getAgility()<<" + "<<subject.getAgilityBoost();
-  for(int i=0; i<(27-((subject.getAgility()/10)+1)-((subject.getAgilityBoost()/10)+1)); ++i) cout<<" ";
-  cout<<"AGI: "<<monster_to_print.getAgility();
+  cout<<"\n     AGI: "<<subject.getAgility()<<" + "<<subject.getAgilityBoost()+subject_agility_boost;
+  for(int i=0; i<(27-(((subject.getAgility()+subject_agility_boost)/10)+1)-((subject.getAgilityBoost()/10)+1)); ++i) cout<<" ";
+  cout<<"AGI: "<<monster_to_print.getAgility()+monster_agility_boost;
 
   cout<<"\n     HP: "<<subject.getHP()<<" / "<<subject.getMaxHP()<<"+"<<subject.getHPBoost();
   for(int i=0; i<(27-((subject.getHP()/10)+1)-((subject.getHPBoost()/10)+1)-((subject.getMaxHP()/10)+1)); ++i) cout<<" ";

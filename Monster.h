@@ -28,6 +28,7 @@ class Monster
     int strength; ///< Monster's strength
     int agility; ///< Monster's agility
     int hp; ///< Monster's Health Points
+    int max_hp; ///<
     string name; ///< Monster's name
 public:
     /// \brief The class constructor
@@ -54,6 +55,11 @@ public:
     /// \return Monster's HP
     int getHP() const;
 
+    /// \brief Max HP getter
+    ///
+    /// \return Monster's Max HP
+    int getMaxHP() const;
+
     /// \brief Name getter
     ///
     /// \return Monster's name
@@ -76,6 +82,11 @@ public:
     ///
     /// \param hp_ - HP to set
     void setHP(int hp_);
+
+    /// \brief Max HP setter
+    ///
+    /// \param max_hp_ - Max HP to set
+    void setMaxHP(int max_hp_);
 
     /// \brief Name setter
     ///
