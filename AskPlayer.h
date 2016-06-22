@@ -10,6 +10,9 @@
 #ifndef ASKPLAYER_H
 #define ASKPLAYER_H
 
+#include "Heroe.h"
+#include "Monster.h"
+
 using namespace std;
 
 /**
@@ -29,6 +32,12 @@ public:
   /** State setter can be used to override default class settings */
   /// \param state_ - 0 or anything - it's used as boolean in case there are need to use more states
   void setState(int state_);
+
+  /// \brief Makes space between sections, smaller than chapter's spacing
+  void endSection();
+
+  /// \brief Makes space between chapters, bigger than section's spacing
+  void endChapter();
 
   /// \brief Print's message as Player
   /** Method will try to separate sentence from NPC and computer sentences. It should look like player is filling cin*/
@@ -53,7 +62,7 @@ public:
   /// \param minimum - minimum of range that INT should be from (more or equal)
   /// \param maximum - maximum of range that INT should be from (less or equal)
   /// \return Returns int that player provided
-  int askForInt(string message, string fail_message, int minimum, int maximum);
+  int askForInt(string message, string fail_message, int minimum, int maximum, string narrate_message = "");
 
   /// \brief Asks player for double from certain range and validates it
   /** Method will write message as NPC than player will have to write answer. If answer was correct (from specified range
@@ -63,7 +72,7 @@ public:
   /// \param minimum - minimum of range that double should be from (more or equal)
   /// \param maximum - maximum of range that double should be from (less or equal)
   /// \return Returns double that player provided
-  double askForDouble(string message, string fail_message, double minimum, double maximum);
+  double askForDouble(string message, string fail_message, double minimum, double maximum, string narrate_message = "");
 
   /// \brief Asks player for string.
   /** Method will write message as NPC than player will have to write answer. If answer was correct (if cin won't produce
@@ -71,7 +80,9 @@ public:
   /// \param message - question that computer should ask
   /// \param fail_message - sentence that computer should say after invalid answer
   /// \return Returns string that player provided
-  string askForString(string message, string fail_message);
+  string askForString(string message, string fail_message, string narrate_message = "");
+
+  void printFight(Heroe& subject, Monster& monster_to_print);
 };
 
 /** \brief Only one existing AskPlayer object, used to interact with player */

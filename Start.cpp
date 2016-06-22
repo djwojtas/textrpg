@@ -39,10 +39,16 @@ void Start::play(Heroe& subject)
     Sleep(350);
     ask.narrate("You gain " + to_string(health) + " health points");
     Sleep(350);
-    ask.playerSay("You are right. But i should be leaving. Goodbye.");
-    Sleep(500);
+    ask.playerSay("You are right. But i should be leaving.");
+    ask.say("Wait! Drink this! This potion will make you stronger.");
+    ask.playerSay("Right...    .     .");
+    ++strength;
+    ++agility;
+    ++health;
+    ask.narrate("Your stats increased by 1");
+    ask.playerSay("Wow, thank you. But now i must leave. Goodbye.");
     ask.say("Good luck, " + name);
-    Sleep(1000);
+    ask.endSection();
 
     subject.setName(name);
     subject.setStrength(strength);

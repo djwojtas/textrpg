@@ -29,20 +29,19 @@ string Riddle::getCorrectAnswer() const
 
 void Riddle::play(Heroe& subject)
 {
-    write<<"-----RIDDLE!-----\n\n";
-
-    write<<getRiddleText()<<"\n";
-
+    ask.narrate("-----RIDDLE!-----");
+    ask.say(getRiddleText());
     string user_answer = ask.askForString("Type in your answer: ", "Excuse me, i did not hear you? Could you repeat?");
 
     if(user_answer==correct_answer)
     {
-        write<<"Correct! In reward, you receive one rune!\n\n";
+        ask.say("Correct! In reward, you receive one rune!");
         int current_rune_count=subject.getRuneCount();
         subject.setRuneCount(current_rune_count+1);
     } else {
-        write<<"Incorrect! Maybe next time you will be successful... \n\n";
+        ask.say("Incorrect! Maybe next time you will be successful...");
     }
+    ask.endSection();
 }
 
 GameStep* Riddle::getNext()

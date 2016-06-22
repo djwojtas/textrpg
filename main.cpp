@@ -8,6 +8,7 @@
 #include "Battle.h"
 #include "Travel.h"
 #include "WriteOut.h"
+#include "ConsoleColor.h"
 
 #include <vector>
 

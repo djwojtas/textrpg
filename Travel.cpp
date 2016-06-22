@@ -18,12 +18,13 @@ int Travel::getChoice() const
 
 void Travel::play(Heroe& subject)
 {
-    write<<"\n\n"<<subject.getName()<<"!"<<" You are about to set off for travel!\n\n";
+    ask.say(subject.getName() + "! You are about to set off for travel!");
 
     int user_choice=ask.askForInt(
-                      "Type 1 /to set off to dangerous areas/ or 2 /to travel by safe roads/: ",
+                      "// Type 1 /to set off to dangerous areas/ or 2 /to travel by safe roads/: //",
                       "You do not like sticking to rules, huh?",
                       1,2);
+    ask.endSection();
 
     this->setChoice(user_choice);
 }
