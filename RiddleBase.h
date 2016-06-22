@@ -39,6 +39,11 @@ public:
     /// \return some Riddle from the base
     Riddle getRiddle(int index);
 
+    /// \brief Function which allows to "pop off" some Riddle from the base
+    ///
+    /// \param index - index of Riddle, which should be deleted
+    void popRiddle(int index);
+
     /// \brief Function which returns size of our Riddle base
     ///
     /// \return Amount of Riddles in our base

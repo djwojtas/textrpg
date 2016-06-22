@@ -175,3 +175,15 @@ void Heroe::loseArtefacts()
 {
     artefact_list.clear();
 }
+
+int Heroe::getAmountOfArtefacts()
+{
+    return artefact_list.size();
+}
+
+Artefact Heroe::loseArtefact(int index)
+{
+    Artefact to_return = artefact_list[index];
+    artefact_list.erase(artefact_list.begin() + index);
+    return to_return;
+}

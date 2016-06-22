@@ -1,6 +1,7 @@
 #include "Riddle.h"
 
 #include "Battle.h"
+#include "RiddleBase.h"
 #include "Fate.h"
 #include "Travel.h"
 #include "WriteOut.h"
@@ -8,6 +9,8 @@
 
 #include <cstdlib>
 #include <ctime>
+
+#include <algorithm>
 
 using namespace std;
 
@@ -33,14 +36,25 @@ void Riddle::play(Heroe& subject)
     ask.say(getRiddleText());
     string user_answer = ask.askForString("Type in your answer: ", "Excuse me, i did not hear you? Could you repeat?");
 
+    transform(user_answer.begin(), user_answer.end(), user_answer.begin(), ::tolower);
+
     if(user_answer==correct_answer)
     {
         ask.say("Correct! In reward, you receive one rune!");
         int current_rune_count=subject.getRuneCount();
         subject.setRuneCount(current_rune_count+1);
+
+        int index_to_pop;
+        for(index_to_pop=0; index_to_pop<BaseOfRiddles.getSize(); index_to_pop++)
+        {
+            if((BaseOfRiddles.getRiddle(index_to_pop)).getCorrectAnswer()==getCorrectAnswer())
+                break;
+        }
+        BaseOfRiddles.popRiddle(index_to_pop);
     } else {
         ask.say("Incorrect! Maybe next time you will be successful...");
     }
+
     ask.endSection();
 }
 

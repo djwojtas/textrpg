@@ -1,4 +1,5 @@
 #include "ArtefactBase.h"
+#include "AskPlayer.h"
 
 using namespace std;
 
@@ -42,6 +43,23 @@ Artefact ArtefactBase::getArtefact(int index)
     {
         return base[index];
     }
+}
+
+void ArtefactBase::popArtefact(int index)
+{
+    if((index>=base.size())||(index<0))
+    {
+        return;
+    }
+    else
+    {
+        base.erase(base.begin() + index);
+    }
+}
+
+void ArtefactBase::pushArtefact(Artefact to_push)
+{
+    base.push_back(to_push);
 }
 
 int ArtefactBase::getSize()
