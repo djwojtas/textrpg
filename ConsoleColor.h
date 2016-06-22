@@ -26,7 +26,7 @@ using namespace std;
 */
 class ConsoleColor
 {
-    HANDLE hConsole;
+    HANDLE hConsole; ///< used for SetConsoleTextAttribute function call
 public:
     /// \brief The class constructor
     ConsoleColor();

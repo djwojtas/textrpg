@@ -35,7 +35,7 @@ public:
     ///
     /// \param subject - Heroe, who will take part in battle
     /// \param opponent - Monster, which will be opponent in battle
-    void play(Heroe& subject, Monster& opponent);
+    void play(Heroe& subject, Monster opponent);
 
     /// \brief Get RIDDLE after BATTLE
     ///

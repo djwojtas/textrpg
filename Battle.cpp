@@ -7,6 +7,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <windows.h>
+#include <cmath>
 #include  "AskPlayer.h"
 
 using namespace std;
@@ -25,52 +26,40 @@ void Battle::play(Heroe& subject)
     int monster_agility_total = random_monster.getAgility();
     int monster_hp_total = random_monster.getHP();
 
+    bool flag_win = true;
+
     while(true)
     {
         ask.printFight(subject, random_monster);
 
+        int heroe_dmg = ceil((double)(heroe_strength_total + ceil((rand()%heroe_agility_total + (heroe_agility_total/2))*0.25))*((double)(rand()% 3 + 7)/5.0));
+        Sleep(500);
+        ask.narrate(subject.getName() + " caused " + to_string(heroe_dmg) + " damage to " + random_monster.getName() + "!");
+        if(random_monster.getDMG(heroe_dmg)) break;
+        flag_win = false;
 
-
-
-        int heroe_dmg = heroe_strength_total*(rand()%heroe_agility_total);
-        write<<subject.getName()<<" cause "<<to_string(heroe_dmg)<<" DMG! \n";
-
-        Sleep(300);
-
-        random_monster.setHP(random_monster.getHP()-heroe_dmg);
-
-        if(random_monster.getHP()<=0)
-        {
-            break;
-        }
-
-        int monster_dmg=monster_strength_total*(rand()%monster_agility_total);
-        write<<random_monster.getName()<<" cause "<<to_string(monster_dmg)<<" DMG! \n";
-
-        Sleep(300);
-
-        subject.getDMG(monster_dmg);
-
-        if(subject.getHP()<=0)
-        {
-            break;
-        }
+        int monster_dmg = ceil((double)(monster_strength_total + ceil((rand()%monster_agility_total + (monster_agility_total/2))*0.25))*((double)(rand()% 3 + 7)/5.0));
+        Sleep(500);
+        ask.narrate(random_monster.getName() + " caused " + to_string(monster_dmg) + " damage to " + subject.getName() + "!");
+        if(subject.getDMG(monster_dmg)) break;
+        flag_win = true;
     }
 
-    if(subject.getHP()<=0)
+    if(flag_win)
     {
-        write<<"\nYou Died! RIP[*]\n";
+        ask.endChapter();
+        ask.say("You Died! RIP[*]");
         exit(0);
     }
-    else if(random_monster.getHP()<=0)
+    else
     {
-        write<<"\nYou Defeated "<<random_monster.getName()<<"\n\n";
+        ask.say("You Defeated " + random_monster.getName() + "\n\n");
     }
 }
 
-void Battle::play(Heroe& subject, Monster& opponent)
+void Battle::play(Heroe& subject, Monster opponent)
 {
-    write<<opponent.getName()<<" attacked you!\n\n";
+    ask.say(opponent.getName() + " attacked you!");
 
     int heroe_strength_total = subject.getStrength()+subject.getStrengthBoost();
     int heroe_agility_total = subject.getAgility()+subject.getAgilityBoost();
@@ -80,36 +69,34 @@ void Battle::play(Heroe& subject, Monster& opponent)
     int monster_agility_total = opponent.getAgility();
     int monster_hp_total = opponent.getHP();
 
+    bool flag_win = true;
+
     while(true)
     {
-        int heroe_dmg = heroe_strength_total*(rand()%heroe_agility_total);
-        write<<subject.getName()<<" cause "<<to_string(heroe_dmg)<<" DMG! \n";
+        ask.printFight(subject, opponent);
 
-        Sleep(300);
+        int heroe_dmg = ceil((double)(heroe_strength_total + ceil((rand()%heroe_agility_total + (heroe_agility_total/2))*0.25))*((double)(rand()% 3 + 7)/5.0));
+        Sleep(500);
+        ask.narrate(subject.getName() + " caused " + to_string(heroe_dmg) + " damage to " + opponent.getName() + "!");
+        if(opponent.getDMG(heroe_dmg)) break;
+        flag_win = false;
 
-        opponent.setHP(opponent.getHP()-heroe_dmg);
-
-        if(opponent.getHP()<=0)
-            break;
-
-        int monster_dmg=monster_strength_total*(rand()%monster_agility_total);
-        write<<opponent.getName()<<" cause "<<to_string(monster_dmg)<<" DMG! \n";
-        Sleep(300);
-
-        subject.getDMG(monster_dmg);
-
-        if(subject.getHP()<=0)
-            break;
+        int monster_dmg = ceil((double)(monster_strength_total + ceil((rand()%monster_agility_total + (monster_agility_total/2))*0.25))*((double)(rand()% 3 + 7)/5.0));
+        Sleep(500);
+        ask.narrate(opponent.getName() + " caused " + to_string(monster_dmg) + " damage to " + subject.getName() + "!");
+        if(subject.getDMG(monster_dmg)) break;
+        flag_win = true;
     }
 
-    if(subject.getHP()<=0)
+    if(flag_win)
     {
-        write<<"\nYou Died! RIP[*]\n";
+        ask.endChapter();
+        ask.say("You Died! RIP[*]");
         exit(0);
     }
-    else if(opponent.getHP()<=0)
+    else
     {
-        write<<"\nYou Defeated "<<opponent.getName()<<"\n";
+        ask.say("You Defeated " + opponent.getName() + "\n\n");
     }
 }
 

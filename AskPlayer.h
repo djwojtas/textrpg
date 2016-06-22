@@ -82,6 +82,9 @@ public:
   /// \return Returns string that player provided
   string askForString(string message, string fail_message, string narrate_message = "");
 
+  /// \brief Prints actual fight - names and stats
+  /// \param subject - Heroe object that will be used to get stats from
+  /// \param monster_to_print - Monster object that will be used to get stats from
   void printFight(Heroe& subject, Monster& monster_to_print);
 };
 

@@ -54,6 +54,7 @@ void Start::play(Heroe& subject)
     subject.setStrength(strength);
     subject.setAgility(agility);
     subject.setHP(health);
+    subject.setMaxHP(health);
 }
 
 GameStep* Start::getNext()

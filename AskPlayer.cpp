@@ -131,8 +131,8 @@ void AskPlayer::printFight(Heroe& subject, Monster& monster_to_print)
   for(int i=0; i<(27-((subject.getAgility()/10)+1)-((subject.getAgilityBoost()/10)+1)); ++i) cout<<" ";
   cout<<"AGI: "<<monster_to_print.getAgility();
 
-  cout<<"\n     HP: "<<subject.getHP()<<" + "<<subject.getHPBoost();
-  for(int i=0; i<(28-((subject.getHP()/10)+1)-((subject.getHPBoost()/10)+1)); ++i) cout<<" ";
+  cout<<"\n     HP: "<<subject.getHP()<<" / "<<subject.getMaxHP()<<"+"<<subject.getHPBoost();
+  for(int i=0; i<(27-((subject.getHP()/10)+1)-((subject.getHPBoost()/10)+1)-((subject.getMaxHP()/10)+1)); ++i) cout<<" ";
   cout<<"HP: "<<monster_to_print.getHP();
 
   cout<<"\n\n";
