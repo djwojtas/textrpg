@@ -24,7 +24,18 @@
 */
 class MainSquare : public GameStep
 {
+    int choice; ///< 1 -> stay at MainSquare ;;; 2 -> go back to suburbs
 public:
+    /// \brief Choice setter
+    ///
+    /// \param choice_ - 1 -> stay at MainSquare ;;; 2 -> go back to suburbs
+    void setChoice(int choice_);
+
+    /// \brief Choice getter
+    ///
+    /// \return 1 -> stay at MainSquare ;;; 2 -> go back to suburbs
+    int getChoice() const;
+
     /// \brief TBD!
     ///
     /// \param subject - TBD!
@@ -35,5 +46,11 @@ public:
     /// \return TBD!
     GameStep* getNext();
 };
+
+/// \brief Choice getter
+///
+/// \param subject - Heroe, who will visit the Healer
+/// \return 1 -> stay at MainSquare ;;; 2 -> go back to suburbs
+int visitHealer(Heroe& subject);
 
 #endif
