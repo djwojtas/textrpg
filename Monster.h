@@ -28,7 +28,7 @@ class Monster
     int strength; ///< Monster's strength
     int agility; ///< Monster's agility
     int hp; ///< Monster's Health Points
-    int max_hp; ///<
+    int max_hp; ///< Monster's maximum Health Points
     string name; ///< Monster's name
 public:
     /// \brief The class constructor
