@@ -1,6 +1,7 @@
 #include "Travel.h"
 #include "Battle.h"
 #include "Fate.h"
+#include "City.h"
 #include "AskPlayer.h"
 #include "WriteOut.h"
 
@@ -23,8 +24,8 @@ void Travel::play(Heroe& subject)
     int user_choice=ask.askForInt(
                       "Where do you want to go?",
                       "You do not like sticking to rules, huh?",
-                      1,2,
-                      "Type 1 to set off to dangerous areas or 2 to travel by safe roads:"
+                      1,3,
+                      "Type 1 to set off to dangerous areas\n2 to travel by safe roads\n3 to direct your steps towards towering city, which shows up on the horizon:"
                       );
     ask.endSection();
 
@@ -42,5 +43,10 @@ GameStep* Travel::getNext()
     {
         Fate* fate_after_travel=new Fate();
         return fate_after_travel;
+    }
+    else if (getChoice()==3)
+    {
+        City* city_after_travel=new City();
+        return city_after_travel;
     }
 }
