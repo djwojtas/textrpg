@@ -48,9 +48,9 @@ public:
     /// \param subject - Heroe, who will try to solve the Riddle
     void play(Heroe& subject);
 
-    /// \brief Unfinished function TBD!
+    /// \brief Get TRAVEL after BATTLE
     ///
-    /// \return Unfinished function TBD!
+    /// \return Pointer to TRAVEL GameStep
     GameStep* getNext();
 };
 
