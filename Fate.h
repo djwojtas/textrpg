@@ -50,4 +50,16 @@ public:
     void setGoodOrBadLuck(int good_or_bad_luck_);
 };
 
+/// \brief Function which represents guessing game possible in Fate--Play
+///
+/// \param subject - Heroe, who will play game
+/// \return integer representing if Heroe won or failed the game 0->success ;;; 1-> fail
+int guessingGame(Heroe& subject);
+
+/// \brief Function which represents Rock Paper Scissors Game possible in Fate--Play
+///
+/// \param subject - Heroe, who will play game
+/// \return integer representing if Heroe won or failed the game 0->success ;;; 1-> fail
+int rockPaperScissors(Heroe& subject);
+
 #endif
