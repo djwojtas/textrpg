@@ -8,7 +8,7 @@
 
 void Start::play(Heroe& subject)
 {
-    string name;
+    /*string name;
     int strength = -1, agility = -1, health = -1, points_to_spend = 16;
     bool repeat_flag;
 
@@ -58,7 +58,7 @@ void Start::play(Heroe& subject)
     subject.setStrength(strength);
     subject.setAgility(agility);
     subject.setHP(health);
-    subject.setMaxHP(health);
+    subject.setMaxHP(health);*/
 }
 
 GameStep* Start::getNext()

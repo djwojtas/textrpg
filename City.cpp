@@ -19,7 +19,7 @@ int City::getChoice() const
 
 void City::play(Heroe& subject)
 {
-    ask.say("You have just crossed the gate of the big city.\nAll around you, there is a lot of people.\nThey are talking with each other, screaming, running, selling some stuff...");
+    ask.say("You stand next to the gate of the big city.\nAll around you, there is a lot of people.\nThey are talking with each other, screaming, running, selling some stuff...");
 
     int user_choice=ask.askForInt(
                       "Where do you want to go?",
