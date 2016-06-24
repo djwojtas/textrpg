@@ -47,10 +47,16 @@ public:
     GameStep* getNext();
 };
 
-/// \brief Choice getter
+/// \brief Function which represents visiting Healer's workshop
 ///
 /// \param subject - Heroe, who will visit the Healer
-/// \return 1 -> stay at MainSquare ;;; 2 -> go back to suburbs
+/// \return Heroe's choice, what to do next ;;; 1 -> stay at MainSquare ;;; 2 -> go back to suburbs
 int visitHealer(Heroe& subject);
+
+/// \brief Function which represents visiting Blacksmith's Forge
+///
+/// \param subject - Heroe, who will visit the Blacksmith
+/// \return Heroe's choice, what to do next ;;; 1 -> stay at MainSquare ;;; 2 -> go back to suburbs
+int visitBlacksmith(Heroe& subject);
 
 #endif
