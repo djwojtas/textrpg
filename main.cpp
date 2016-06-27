@@ -1,4 +1,5 @@
 #include <iostream>
+#include <ctime>
 
 #include "Heroe.h"
 #include "Artefact.h"
@@ -16,6 +17,8 @@ using namespace std;
 
 int main()
 {
+    srand(time(NULL));
+
     Heroe main_character;
     Start main_adventure;
     GameStep* current_state = &main_adventure;
