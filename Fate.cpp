@@ -27,25 +27,15 @@ void Fate::play(Heroe& subject)
     int success = 0;
     int game_number = rand()%2;
 
-    if(game_number==0)
-    {
-        success = playGuessingGame(subject);
-    }
-    else if(game_number==1)
-    {
-        success = playRockPaperScissors(subject);
-    }
+    if (game_number==0){ success = playRockPaperScissors(subject); }
+    else if (game_number==1){ success = playGuessingGame(subject); }
 
     setFailOrVictory(success);
 
-    if(fail_or_victory==1)
-    {
+    if(getFailOrVictory())
         playVictory(subject);
-    }
     else
-    {
         playFail(subject);
-    }
 }
 
 int Fate::getFailOrVictory()
