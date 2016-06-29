@@ -24,7 +24,7 @@
 */
 class Fate : public GameStep
 {
-    int good_or_bad_luck; ///< 0 -> bad luck ; 1 -> good luck
+    int fail_or_victory; ///< 0 -> fail ; 1 -> victory
 public:
     /// \brief Default class constructor
     Fate();
@@ -34,32 +34,42 @@ public:
     /// \param subject - Heroe, who will play game
     void play(Heroe& subject);
 
-    /// \brief Unfinished function TBD!
+    /// \brief Get TRAVEL after FATE
     ///
-    /// \return Unfinished function TBD!
+    /// \return Pointer to TRAVEL GameStep
     GameStep* getNext();
 
-    /// \brief Good-Or-Bad-Luck Getter
+    /// \brief Fail-Or-Victory Getter
     ///
-    /// \return 0 -> bad luck ; 1 -> good luck
-    int getGoodOrBadLuck();
+    /// \return 0 -> fail ; 1 -> victory
+    int getFailOrVictory();
 
-    /// \brief Good-Or-Bad-Luck Setter
+    /// \brief Fail-Or-Victory Setter
     ///
-    /// \param good_or_bad_luck_ - 0 -> bad luck ; 1 -> good luck
-    void setGoodOrBadLuck(int good_or_bad_luck_);
+    /// \param fail_or_victory_ - 0 -> fail ; 1 -> victory
+    void setFailOrVictory(int fail_or_victory_);
 };
 
 /// \brief Function which represents guessing game possible in Fate--Play
 ///
 /// \param subject - Heroe, who will play game
 /// \return integer representing if Heroe won or failed the game 0->success ;;; 1-> fail
-int guessingGame(Heroe& subject);
+int playGuessingGame(Heroe& subject);
 
 /// \brief Function which represents Rock Paper Scissors Game possible in Fate--Play
 ///
 /// \param subject - Heroe, who will play game
 /// \return integer representing if Heroe won or failed the game 0->success ;;; 1-> fail
-int rockPaperScissors(Heroe& subject);
+int playRockPaperScissors(Heroe& subject);
+
+/// \brief Function, which is called when Heroe win Fate-Game
+///
+/// \param subject - Heroe, who won the game
+void playVictory(Heroe& subject);
+
+/// \brief Function, which is called when Heroe lose Fate-Game
+///
+/// \param subject - Heroe, who lost the game
+void playFail(Heroe& subject);
 
 #endif
