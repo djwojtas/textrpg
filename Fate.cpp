@@ -1,6 +1,7 @@
 #include "Fate.h"
 #include "Travel.h"
 #include "ArtefactBase.h"
+#include "DiceSerie.h"
 #include "WriteOut.h"
 #include "AskPlayer.h"
 
@@ -25,10 +26,11 @@ void Fate::play(Heroe& subject)
     }
 
     int success = 0;
-    int game_number = rand()%2;
+    int game_number = rand()%3;
 
     if (game_number==0){ success = playRockPaperScissors(subject); }
     else if (game_number==1){ success = playGuessingGame(subject); }
+    else if (game_number==2){ success = playDiceGame(subject); }
 
     setFailOrVictory(success);
 
@@ -202,7 +204,47 @@ int playRockPaperScissors(Heroe& subject)
 
 int playDiceGame(Heroe& subject)
 {
+    ask.narrate("Odd stranger tackles you on the road.");
+    ask.say("Hello wanderer, let's play the DICE POKER Game!");
 
+    DiceSerie user_serie;
+    DiceSerie computer_serie;
+
+    ask.narrate("You roll your five die.");
+    user_serie.roll();
+
+    ask.narrate("This is the die combination which you managed to roll: ");
+    cout<<endl;
+    user_serie.printDie();
+
+    ask.narrate("Odd stranger rolls his five die.");
+    computer_serie.roll();
+
+    ask.narrate("This is his outcome: ");
+    cout<<endl;
+    computer_serie.printDie();
+    cout<<endl;
+
+    user_serie.rollChosenUserInput();
+
+    ask.narrate("So this is your final combination: ");
+    cout<<endl;
+    user_serie.printDie();
+
+    ask.narrate("Odd stranger thinks which die he should re-roll...");
+    //Sleep(200);
+    ask.narrate("Finally he decides and rolls.");
+    computer_serie.computerReRoll();
+    ask.narrate("This is what he achieved: ");
+    computer_serie.printDie();
+
+    user_serie.countAmountsOfPips();
+    user_serie.refreshValue();
+
+    computer_serie.countAmountsOfPips();
+    computer_serie.refreshValue();
+
+    return ( user_serie > computer_serie );
 }
 
 void playVictory(Heroe& subject)
