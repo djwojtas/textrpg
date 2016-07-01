@@ -200,6 +200,11 @@ int playRockPaperScissors(Heroe& subject)
     return success;
 }
 
+int playDiceGame(Heroe& subject)
+{
+
+}
+
 void playVictory(Heroe& subject)
 {
     ask.say("You have won traveler! You're good!");

@@ -62,6 +62,12 @@ int playGuessingGame(Heroe& subject);
 /// \return integer representing if Heroe won or failed the game 0->success ;;; 1-> fail
 int playRockPaperScissors(Heroe& subject);
 
+/// \brief Function which represents Dice Game possible in Fate--Play
+///
+/// \param subject - Heroe, who will play Dice game
+/// \return integer representing if Heroe won or failed the game 0->success ;;; 1-> fail
+int playDiceGame(Heroe& subject);
+
 /// \brief Function, which is called when Heroe win Fate-Game
 ///
 /// \param subject - Heroe, who won the game
