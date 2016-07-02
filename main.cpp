@@ -1,15 +1,15 @@
 #include <iostream>
 #include <ctime>
 
-#include "Heroe.h"
-#include "Artefact.h"
-#include "Riddle.h"
-#include "Start.h"
-#include "Monster.h"
-#include "Battle.h"
-#include "Travel.h"
-#include "WriteOut.h"
-#include "ConsoleColor.h"
+#include "Classes/Characters/Heroe.h"
+#include "Classes/Items/Artefact.h"
+#include "Classes/GameSteps/MainGameSteps/Riddle.h"
+#include "Classes/GameSteps/MainGameSteps/Start.h"
+#include "Classes/Characters/Monster.h"
+#include "Classes/GameSteps/MainGameSteps/Battle.h"
+#include "Classes/GameSteps/MainGameSteps/Travel.h"
+#include "Classes/API/WriteOut.h"
+#include "Classes/API/ConsoleColor.h"
 
 #include <vector>
 
