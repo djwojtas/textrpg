@@ -19,8 +19,8 @@ int MainSquare::getChoice() const
 void MainSquare::play(Heroe& subject)
 {
     //TBD
-    ask.say("You are standing on the stones of The Main Square...");
-    int user_choice=ask.askForInt("","Do not joke traveler!", 1, 2, "Type in 1 to go to Healer's Workshop\n2 to visit Blacksmith\n3 to go back to suburbs");
+    ask.say("(#MAIN SQUARE) You are standing on big stones of square, where a lot of people have their stalls and offices...");
+    int user_choice=ask.askForInt("","Do not joke traveler!", 1, 3, "Type in 1 to go to Healer's Workshop\n2 to visit Blacksmith\n3 to go somewhere else");
 
     int next_step=1;
 
@@ -69,7 +69,7 @@ int visitHealer(Heroe& subject)
     {
         ask.say("\"What a mighty young man, you are!\nI am afraid you will not find anything interesting here...\" - he says with his velvet voice.");
     }
-    int user_choice=ask.askForInt("You set your foots upon the Main Square again","Do not joke traveler!", 1, 2, "Type in 1 to stay at the Main Square or 2 to go back to suburbs");
+    int user_choice=ask.askForInt("You set your foots upon the Main Square again","Do not joke traveler!", 1, 2, "Type in 1 to stay at the Main Square or 2 to go somewhere else");
     return user_choice;
 }
 
@@ -89,6 +89,6 @@ int visitBlacksmith(Heroe& subject)
     //TBD
     //Procedura kupowania
 
-    int user_choice=ask.askForInt("You leave dark forge and find yourself on the Main Square again.","Do not joke traveler!", 1, 2, "Type in 1 to stay at the Main Square or 2 to go back to suburbs");
+    int user_choice=ask.askForInt("You leave dark forge and find yourself on the Main Square again.","Do not joke traveler!", 1, 2, "Type in 1 to stay at the Main Square or 2 to go somewhere else");
     return user_choice;
 }

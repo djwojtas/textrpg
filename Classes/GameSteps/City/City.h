@@ -24,16 +24,16 @@
 */
 class City : public GameStep
 {
-    int choice; ///< 1 -> main square ;;; 2 -> left district ;; 3 -> right district
+    int choice; ///< 1 -> suburbs ;;; 2 -> main square ;;; 3 -> left district ;; 4 -> right district
 public:
     /// \brief Choice setter
     ///
-    /// \param choice_ - 1 -> main square ;;; 2 -> left district ;; 3 -> right district
+    /// \param choice_ - 1 -> suburbs ;;; 2 -> main square ;;; 3 -> left district ;; 4 -> right district
     void setChoice(int choice_);
 
     /// \brief Choice getter
     ///
-    /// \return 1 -> main square ;;; 2 -> left district ;; 3 -> right district
+    /// \return 1 -> suburbs ;;; 2 -> main square ;;; 3 -> left district ;; 4 -> right district
     int getChoice() const;
 
     /// \brief This function will ask player, where he wants to ;;; 1 -> main square ;;; 2 -> left district ;; 3 -> right district
@@ -43,7 +43,7 @@ public:
 
     /// \brief Next step after City
     ///
-    /// \return If choice is 1 -> it is MainSquare. If choice is 2 -> it is LeftDistrict. If choice is 3 -> it is RightDistrict
+    /// \return If choice is 1 it is suburbs ;;; if 2 it is main square ;;; if 3 it is left district ;; if 4 it is right district
     GameStep* getNext();
 
 };
