@@ -10,38 +10,65 @@
 #ifndef ITEM_H
 #define ITEM_H
 
+#include<iostream>
+
 // -------------------------------------------------------------------------
 
 /**
 * \class Item
 * \author RPGteam
 * \date 21.06.2016
-* \brief Item class 
+* \brief Item class
 */
 
 class Item
 {
-	private: 
-		int price; ///< Item Price
-		int weight; ///< Item Weight
-		
-		
-	public: 
+private:
+    int price; ///< Item Price
+    std::string name; ///< Item name
+    std::string description; ///< Item description
 
-		/// \brief Price getter
+public:
+
+    /// \brief Item constructor
     ///
-    /// \return price of the item
-		int getPrice();
+    /// \param name_ - Item name
+    /// \param description_ - Item description
+    /// \param price_ - Item price
+    Item(int price_, std::string name_, std::string description_);
 
-		/// \brief Weight getter
+    /// \brief default Item constructor, leaves everything uninitialized
+    Item();
+
+    /// \brief Price getter
     ///
-    /// \return weight of the item
-		int getWeight();
-		
+    /// \return get price of the item
+    int getPrice();
 
-		/// \brief Printing item parameters on the screen
-		virtual void print() = 0;
-		
+    /// \brief Price setter
+    ///
+    /// \param price_ - Item price
+    void setPrice(int price_);
+
+    /// \brief Name getter
+    ///
+    /// \return get name of the item
+    std::string getName();
+
+    /// \brief Name setter
+    ///
+    /// \param name_ - Item name
+    void setName(std::string name_);
+
+    /// \brief Description getter
+    ///
+    /// \return get description of the item
+    std::string getDescription();
+
+    /// \brief Description setter
+    ///
+    /// \param description_ - Item description
+    void setDescription(std::string description_);
 
 };
 
