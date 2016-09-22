@@ -7,7 +7,7 @@ using namespace std;
 void LeftDistrict::play(Heroe& subject)
 {
     //TBD
-    ask.say("You are wandering the sidewalks of The Left District...");
+    ask.say("(#LEFT DISTRICT) You are wandering glorious sidewalks...");
 }
 
 GameStep* LeftDistrict::getNext()
