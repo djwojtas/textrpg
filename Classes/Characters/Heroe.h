@@ -12,8 +12,8 @@
 
 // -------------------------------------------------------------------------
 
-#include "../Items/Artefact.h"
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
@@ -39,7 +39,6 @@ private:
     int agility_boost; ///< Amount of boosted agility
     int hp_boost; ///< Amount of boosted Health Points
 
-    vector <Artefact> artefact_list; ///< List of Artefacts owned by Heroe
     int rune_count; ///< Amount of runed, which Heroe obtained
     string name; ///< Just Heroe name
 public:
@@ -149,16 +148,6 @@ public:
     //END OF GETTERS-----------
 
     //Utility
-    /// \brief Function used to add new Artefact to the Heroe's list
-    ///
-    /// \param artefact_to_add - Artefact, which will be added to the list
-    void addArtefact(Artefact &artefact_to_add);
-
-    /// \brief Function, which is used to learn about amount of Artefacts, that Heroe have
-    ///
-    /// \return amount of Artefacts, that Heroe have
-    int getAmountOfArtefacts();
-
     /// \brief Simple printing base info about Heroe on the screen
     void printHeroe() const;
 
@@ -166,15 +155,6 @@ public:
     ///
     /// \param dmg_amount - How much damage is received
     bool getDMG(int dmg_amount);
-
-    /// \brief Function, which is used, when Heroe loses Artefact due to FATE ;'(
-    void loseArtefacts();
-
-    /// \brief Function used to delete certain Artefact from Heroe's inventory
-    ///
-    /// \param index - Which Artefact should be deleted
-    /// \return deleted Artefact
-    Artefact loseArtefact(int index);
 };
 
 #endif

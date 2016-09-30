@@ -126,24 +126,6 @@ string Heroe::getName() const
     return name;
 }
 
-void Heroe::addArtefact(Artefact &artefact_to_add)
-{
-    artefact_list.push_back(artefact_to_add);
-
-    if(artefact_to_add.getSkillBoost()==STRENGTH)
-    {
-        this->strength_boost=artefact_to_add.getBoostAmount();
-    }
-    else if (artefact_to_add.getSkillBoost()==AGILITY)
-    {
-        this->agility_boost=artefact_to_add.getBoostAmount();
-    }
-    else if (artefact_to_add.getSkillBoost()==HP)
-    {
-        this->hp_boost=artefact_to_add.getBoostAmount();
-    }
-}
-
 void Heroe::printHeroe() const
 {
     cout<<endl;
@@ -152,21 +134,6 @@ void Heroe::printHeroe() const
     cout<<"Agility = "<<getAgility()<<" (+"<<getAgilityBoost()<<") "<<endl;
     cout<<"Health Points = "<<getHP()<<" (+"<<getHPBoost()<<") "<<endl;
     cout<<"Possessed Runes = "<<getRuneCount()<<endl;
-
-    cout<<endl;
-    cout<<"--List of Artefacts--"<<endl;
-
-    if(artefact_list.size()==0)
-    {
-        cout<<"  NONE"<<endl;
-        return;
-    }
-
-    for(int i=0; i<artefact_list.size(); i++)
-    {
-        cout<<"  "<<i+1<<". ";
-        artefact_list[i].printArtefact();
-    }
 }
 
 bool Heroe::getDMG(int dmg_amount)
@@ -175,21 +142,4 @@ bool Heroe::getDMG(int dmg_amount)
     cout<<"\n\n"<<dmg_amount<<"\n\n";
     if(hp<=0) return true;
       else return false;
-}
-
-void Heroe::loseArtefacts()
-{
-    artefact_list.clear();
-}
-
-int Heroe::getAmountOfArtefacts()
-{
-    return artefact_list.size();
-}
-
-Artefact Heroe::loseArtefact(int index)
-{
-    Artefact to_return = artefact_list[index];
-    artefact_list.erase(artefact_list.begin() + index);
-    return to_return;
 }

@@ -1,6 +1,5 @@
 #include "City.h"
 #include "MainSquare.h"
-#include "../../Bases/ArtefactBase.h"
 #include "../../API/AskPlayer.h"
 #include "../../API/WriteOut.h"
 
@@ -76,15 +75,6 @@ int visitHealer(Heroe& subject)
 int visitBlacksmith(Heroe& subject)
 {
     ask.say("Enormously muscular man with magnificent black beard greets you.");
-
-    if((subject.getAmountOfArtefacts()>0)&&(subject.getAmountOfArtefacts()<BaseOfArtefacts.getSize()))
-    {
-        ask.say("\"I see, that you have collected a few powerful Artefacts here.\"\n- The Blacksmith says stroking his beard.");
-    }
-    else if (subject.getAmountOfArtefacts()>=BaseOfArtefacts.getSize())
-    {
-        ask.say("\"You must be either very rich or very brave.\"\n- The Blacksmith says looking with respect at Artefacts in your equipment.");
-    }
 
     //TBD
     //Procedura kupowania

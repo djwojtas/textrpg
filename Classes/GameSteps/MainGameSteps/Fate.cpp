@@ -1,6 +1,5 @@
 #include "Fate.h"
 #include "Travel.h"
-#include "../../Bases/ArtefactBase.h"
 #include "FateAuxiliary/DiceSerie.h"
 #include "../../API/WriteOut.h"
 #include "../../API/AskPlayer.h"
@@ -19,12 +18,6 @@ Fate::Fate()
 
 void Fate::play(Heroe& subject)
 {
-    if(BaseOfArtefacts.getSize()==0)
-    {
-        ask.say("You have every possible Artefact in your inventory, you greedy bastard!\n\n");
-        return;
-    }
-
     int success = 0;
     int game_number = rand()%3;
 
@@ -250,50 +243,9 @@ int playDiceGame(Heroe& subject)
 void playVictory(Heroe& subject)
 {
     ask.say("You have won traveler! You're good!");
-    int drawn_number=rand()%101;
-
-    if(drawn_number<=70) /*70% chance for winning some Artefacts*/
-    {
-        int index_of_artefact=( rand() % BaseOfArtefacts.getSize() );
-        Artefact drawn_artefact=BaseOfArtefacts.getArtefact(index_of_artefact);
-        subject.addArtefact(drawn_artefact);
-        ask.say("I will give you this: ");
-        drawn_artefact.printArtefact();
-        write<<"\n\n";
-        BaseOfArtefacts.popArtefact(index_of_artefact);
-    }
-    else
-    {
-        ask.say("Unfortunately, right now i do not have any Artefact for you...\n\n");
-    }
 }
 
 void playFail(Heroe& subject)
 {
     ask.say("You have lost traveler!");
-
-    int drawn_number=rand()%101;
-
-    if(drawn_number<=35) /*35% chance for losing some Artefacts*/
-    {
-        if(subject.getAmountOfArtefacts()==0)
-        {
-            ask.say("You would lose some Artefacts, but fortunately you have none of them! Lucky bastard!");
-            write<<"\n\n";
-            return;
-        }
-        else
-        {
-            int artefact_index = rand() % subject.getAmountOfArtefacts();
-            BaseOfArtefacts.pushArtefact( subject.loseArtefact(artefact_index) );
-            ask.say("I regret to say it, but i must take you this artefact!: ");
-            BaseOfArtefacts.getArtefact(BaseOfArtefacts.getSize()-1).printArtefact();
-            write<<"\n\n";
-        }
-    }
-
-    else
-    {
-        ask.say("Umm, i do not feel quite mighty today. I will not take you any Artefact. Now go away!\n\n");
-    }
 }
