@@ -57,5 +57,5 @@ int Equipment::getBoostAdder(int which)
 
 int* Equipment::getBoostAdders()
 {
-  boost_adder;
+  return boost_adder;
 }

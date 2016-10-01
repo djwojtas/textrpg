@@ -23,9 +23,9 @@ void Battle::play(Heroe& subject, Monster opponent)
 {
     ask.say(opponent.getName() + " attacked you!");
 
-    int heroe_strength_total = subject.getStrength()+subject.getStrengthBoost();
-    int heroe_agility_total = subject.getAgility()+subject.getAgilityBoost();
-    int heroe_hp_total = subject.getHP()+subject.getHPBoost();
+    int heroe_strength_total = subject.getFullStrength();
+    int heroe_agility_total = subject.getFullAgility();
+    int heroe_hp_total = subject.getFullHP();
 
     int monster_strength_total = opponent.getStrength();
     int monster_agility_total = opponent.getAgility();
