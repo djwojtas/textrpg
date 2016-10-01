@@ -123,16 +123,16 @@ void AskPlayer::printFight(Heroe& subject, Monster& monster_to_print, int subjec
   for(int i=0; i<(35-(subject.getName().size())); ++i) cout<<" ";
   cout<<monster_to_print.getName();
 
-  cout<<"\n\n     STR: "<<subject.getStrength()<<" + "<<subject.getStrengthBoost();
-  for(int i=0; i<(27-((subject.getStrength()/10)+1)-((subject.getStrengthBoost()/10)+1)); ++i) cout<<" ";
+  cout<<"\n\n     STR: "<<subject.getFullStrength();
+  for(int i=0; i<(27-((subject.getFullStrength()/10)+1)); ++i) cout<<" ";
   cout<<"STR: "<<monster_to_print.getStrength();
 
-  cout<<"\n     AGI: "<<subject.getAgility()<<" + "<<subject.getAgilityBoost()+subject_agility_boost;
-  for(int i=0; i<(27-(((subject.getAgility()+subject_agility_boost)/10)+1)-((subject.getAgilityBoost()/10)+1)); ++i) cout<<" ";
-  cout<<"AGI: "<<monster_to_print.getAgility()+monster_agility_boost;
+  cout<<"\n     AGI: "<<subject.getFullAgility();
+  for(int i=0; i<(27-(((subject.getFullStrength())/10)+1)); ++i) cout<<" ";
+  cout<<"AGI: "<<monster_to_print.getAgility();
 
-  cout<<"\n     HP: "<<subject.getHP()<<" / "<<subject.getMaxHP()<<"+"<<subject.getHPBoost();
-  for(int i=0; i<(27-((subject.getHP()/10)+1)-((subject.getHPBoost()/10)+1)-((subject.getMaxHP()/10)+1)); ++i) cout<<" ";
+  cout<<"\n     HP: "<<subject.getFullHP();
+  for(int i=0; i<(28-((subject.getFullHP()/10)+1)); ++i) cout<<" ";
   cout<<"HP: "<<monster_to_print.getHP();
 
   cout<<"\n\n";

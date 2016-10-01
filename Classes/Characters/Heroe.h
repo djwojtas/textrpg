@@ -35,11 +35,14 @@ private:
     int max_hp; ///< Heroe Maximum HP
 
     //Artefact boosts
-    int strength_boost; ///< Amount of boosted strength
-    int agility_boost; ///< Amount of boosted agility
-    int hp_boost; ///< Amount of boosted Health Points
+    int strength_adder; ///< Amount of boosted strength
+    int agility_adder; ///< Amount of boosted agility
+    int hp_adder; ///< Amount of boosted Health Points
 
-    int rune_count; ///< Amount of runed, which Heroe obtained
+    double strength_multiplier; ///< Amount of boosted strength
+    double agility_multiplier; ///< Amount of boosted agility
+    double hp_multiplier; ///< Amount of boosted Health Points
+
     string name; ///< Just Heroe name
 public:
     /// \brief Parametric class constructor
@@ -82,22 +85,32 @@ public:
     /// \brief Boosted-Strength setter
     ///
     /// \param strength_boost_ - Boosted-Strength to set
-    void setStrengthBoost(int strength_boost_);
+    void setStrengthAdder(int strength_adder_);
 
     /// \brief Boosted-Agility setter
     ///
     /// \param agility_boost_ - Boosted-Agility to set
-    void setAgilityBoost(int agility_boost_);
+    void setAgilityAdder(int agility_adder_);
 
     /// \brief Boosted-HP setter
     ///
     /// \param hp_boost_ - Boosted-HP to set
-    void setHPBoost(int hp_boost_);
+    void setHPAdder(int hp_adder_);
 
-    /// \brief Rune-Count setter
+    /// \brief Multiplier-Strength setter
     ///
-    /// \param rune_count_ - Rune-Count to set
-    void setRuneCount(int rune_count_);
+    /// \param strength_multiplier_ - Multiplier-Strength to set
+    void setStrengthMultiplier(int strength_multiplier_);
+
+    /// \brief Multiplier-Agility setter
+    ///
+    /// \param agility_multiplier_ - Multiplier-Agility to set
+    void setAgilityMultiplier(int agility_multiplier_);
+
+    /// \brief Multiplier-HP setter
+    ///
+    /// \param hp_multiplier_ - Multiplier-HP to set
+    void setHPMultiplier(int hp_multiplier_);
     //END OF SETTERS-------------
 
     //Getters
@@ -119,27 +132,37 @@ public:
     /// \brief Boosted-Strength getter
     ///
     /// \return Heroe's Boosted-Strength
-    int getStrengthBoost() const;
+    int getStrengthAdder() const;
 
     /// \brief Boosted-Agility getter
     ///
     /// \return Heroe's Boosted-Agility
-    int getAgilityBoost() const;
+    int getAgilityAdder() const;
 
     /// \brief Boosted-HP getter
     ///
     /// \return Heroe's Boosted-HP
-    int getHPBoost() const;
+    int getHPAdder() const;
+
+    /// \brief Multiplier-Strength getter
+    ///
+    /// \return Heroe's Multiplier-Strength
+    int getStrengthMultiplier() const;
+
+    /// \brief Multiplier-Agility getter
+    ///
+    /// \return Heroe's Multiplier-Agility
+    int getAgilityMultiplier() const;
+
+    /// \brief Multiplier-HP getter
+    ///
+    /// \return Heroe's Multiplier-HP
+    int getHPMultiplier() const;
 
     /// \brief Max HP getter
     ///
     /// \return Heroe's max HP
     int getMaxHP() const;
-
-    /// \brief Rune-Count getter
-    ///
-    /// \return - Amount of Runes possessed by Heroe
-    int getRuneCount() const;
 
     /// \brief Name getter
     ///
@@ -155,6 +178,21 @@ public:
     ///
     /// \param dmg_amount - How much damage is received
     bool getDMG(int dmg_amount);
+
+    /// \brief Returns strength multiplied by multiplier and added adder
+    ///
+    /// \return actual character strength with all eq and consumables
+    int getFullStrength() const;
+
+    /// \brief Returns agility multiplied by multiplier and added adder
+    ///
+    /// \return actual character agility with all eq and consumables
+    int getFullAgility() const;
+
+    /// \brief Returns HP multiplied by multiplier and added adder
+    ///
+    /// \return actual character HP with all eq and consumables
+    int getFullHP() const;
 };
 
 #endif

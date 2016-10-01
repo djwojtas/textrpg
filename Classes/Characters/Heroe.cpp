@@ -13,11 +13,13 @@ Heroe::Heroe(string name_, int strength_, int agility_, int hp_)
     hp=hp_;
     max_hp=hp_;
 
-    strength_boost=0;
-    agility_boost=0;
-    hp_boost=0;
+    strength_adder=0;
+    agility_adder=0;
+    hp_adder=0;
 
-    rune_count=0;
+    strength_multiplier=1;
+    agility_multiplier=1;
+    hp_multiplier=1;
 }
 
 Heroe::Heroe()
@@ -29,11 +31,13 @@ Heroe::Heroe()
     hp=0;
     max_hp=0;
 
-    strength_boost=0;
-    agility_boost=0;
-    hp_boost=0;
+    strength_adder=0;
+    agility_adder=0;
+    hp_adder=0;
 
-    rune_count=0;
+    strength_multiplier=1;
+    agility_multiplier=1;
+    hp_multiplier=1;
 }
 
 void Heroe::setName(string name_)
@@ -61,24 +65,19 @@ void Heroe::setMaxHP(int max_hp_)
     max_hp=max_hp_;
 }
 
-void Heroe::setStrengthBoost(int strength_boost_)
+void Heroe::setStrengthAdder(int strength_adder_)
 {
-    strength_boost=strength_boost_;
+    strength_adder=strength_adder_;
 }
 
-void Heroe::setAgilityBoost(int agility_boost_)
+void Heroe::setAgilityAdder(int agility_adder_)
 {
-    agility_boost=agility_boost_;
+    agility_adder=agility_adder_;
 }
 
-void Heroe::setHPBoost(int hp_boost_)
+void Heroe::setHPAdder(int hp_adder_)
 {
-    hp_boost=hp_boost_;
-}
-
-void Heroe::setRuneCount(int rune_count_)
-{
-    rune_count=rune_count_;
+    hp_adder=hp_adder_;
 }
 
 int Heroe::getStrength() const
@@ -101,24 +100,19 @@ int Heroe::getMaxHP() const
     return max_hp;
 }
 
-int Heroe::getStrengthBoost() const
+int Heroe::getStrengthAdder() const
 {
-    return strength_boost;
+    return strength_adder;
 }
 
-int Heroe::getAgilityBoost() const
+int Heroe::getAgilityAdder() const
 {
-    return agility_boost;
+    return agility_adder;
 }
 
-int Heroe::getHPBoost() const
+int Heroe::getHPAdder() const
 {
-    return hp_boost;
-}
-
-int Heroe::getRuneCount() const
-{
-    return rune_count;
+    return hp_adder;
 }
 
 string Heroe::getName() const
@@ -130,10 +124,9 @@ void Heroe::printHeroe() const
 {
     cout<<endl;
     cout<<"Name = "<<getName()<<endl;
-    cout<<"Strength = "<<getStrength()<<" (+"<<getStrengthBoost()<<") "<<endl;
-    cout<<"Agility = "<<getAgility()<<" (+"<<getAgilityBoost()<<") "<<endl;
-    cout<<"Health Points = "<<getHP()<<" (+"<<getHPBoost()<<") "<<endl;
-    cout<<"Possessed Runes = "<<getRuneCount()<<endl;
+    cout<<"Strength = "<<getFullStrength();
+    cout<<"Agility = "<<getFullAgility();
+    cout<<"Health Points = "<<getFullHP();
 }
 
 bool Heroe::getDMG(int dmg_amount)
@@ -142,4 +135,49 @@ bool Heroe::getDMG(int dmg_amount)
     cout<<"\n\n"<<dmg_amount<<"\n\n";
     if(hp<=0) return true;
       else return false;
+}
+
+void Heroe::setStrengthMultiplier(int strength_multiplier_)
+{
+  strength_multiplier = strength_multiplier_;
+}
+
+void Heroe::setAgilityMultiplier(int agility_multiplier_)
+{
+  agility_multiplier = agility_multiplier_;
+}
+
+void Heroe::setHPMultiplier(int hp_multiplier_)
+{
+  hp_multiplier = hp_multiplier_;
+}
+
+int Heroe::getStrengthMultiplier() const
+{
+  return strength_multiplier;
+}
+
+int Heroe::getAgilityMultiplier() const
+{
+  return agility_multiplier;
+}
+
+int Heroe::getHPMultiplier() const
+{
+  return hp_multiplier;
+}
+
+int Heroe::getFullStrength() const
+{
+  return strength * strength_multiplier + strength_adder;
+}
+
+int Heroe::getFullAgility() const
+{
+  return agility * agility_multiplier + agility_adder;
+}
+
+int Heroe::getFullHP() const
+{
+  return hp * hp_multiplier + hp_adder;
 }
