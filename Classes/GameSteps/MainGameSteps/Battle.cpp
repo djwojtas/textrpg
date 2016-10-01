@@ -9,6 +9,7 @@
 #include <ctime>
 #include <windows.h>
 #include <cmath>
+#include <sstream>
 
 using namespace std;
 
