@@ -2,6 +2,8 @@
 #include "../../API/AskPlayer.h"
 #include "../../API/WriteOut.h"
 
+#include <cstdlib>
+
 using namespace std;
 
 void LeftDistrict::play(Heroe& subject)

@@ -40,17 +40,7 @@ void Riddle::play(Heroe& subject)
 
     if(user_answer==correct_answer)
     {
-        ask.say("Correct! In reward, you receive one rune!");
-        int current_rune_count=subject.getRuneCount();
-        subject.setRuneCount(current_rune_count+1);
-
-        int index_to_pop;
-        for(index_to_pop=0; index_to_pop<BaseOfRiddles.getSize(); index_to_pop++)
-        {
-            if((BaseOfRiddles.getRiddle(index_to_pop)).getCorrectAnswer()==getCorrectAnswer())
-                break;
-        }
-        BaseOfRiddles.popRiddle(index_to_pop);
+        ask.say("Correct!");
     } else {
         ask.say("Incorrect! Maybe next time you will be successful...");
     }

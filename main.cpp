@@ -24,7 +24,6 @@ int main()
 
     while(true)
     {
-        if(main_character.getRuneCount()>=7) { write<<"Congratulations! You have succeeded!"; break; }
         current_state->play(main_character);
         current_state=current_state->getNext();
     }
