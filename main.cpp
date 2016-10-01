@@ -2,7 +2,6 @@
 #include <ctime>
 
 #include "Classes/Characters/Heroe.h"
-#include "Classes/Items/Artefact.h"
 #include "Classes/GameSteps/MainGameSteps/Riddle.h"
 #include "Classes/GameSteps/MainGameSteps/Start.h"
 #include "Classes/Characters/Monster.h"
@@ -17,7 +16,7 @@ using namespace std;
 
 int main()
 {
-    srand(time(NULL));
+    srand(time(NULL));;
 
     Heroe main_character;
     Start main_adventure;

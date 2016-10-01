@@ -1,6 +1,5 @@
 #include "City.h"
 #include "Suburbs.h"
-#include "../../Bases/ArtefactBase.h"
 #include "../../API/AskPlayer.h"
 #include "../../API/WriteOut.h"
 
