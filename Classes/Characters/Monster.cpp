@@ -1,10 +1,11 @@
 #include "Monster.h"
 
-Monster::Monster(int strength_, int agility_, int hp_, string name_)
+Monster::Monster(int strength_, int agility_, int hp_, int def_, string name_)
 {
     strength=strength_;
     agility=agility_;
     hp=hp_;
+    def=def_;
     max_hp=hp_;
     name=name_;
 }
@@ -22,6 +23,11 @@ int Monster::getAgility() const
 int Monster::getHP() const
 {
     return hp;
+}
+
+int Monster::getDef() const
+{
+    return def;
 }
 
 int Monster::getMaxHP() const
@@ -47,6 +53,11 @@ void Monster::setStrength(int strength_)
 void Monster::setHP(int hp_)
 {
     hp=hp_;
+}
+
+void Monster::setDef(int def_)
+{
+    def=def_;
 }
 
 void Monster::setMaxHP(int max_hp_)

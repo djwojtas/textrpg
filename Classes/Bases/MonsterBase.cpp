@@ -4,9 +4,9 @@ using namespace std;
 
 MonsterBase::MonsterBase()
 {
-    Monster first(1, 1, 20, "Centaur");
-    Monster second(1, 1, 20, "Harpyia");
-    Monster third(1, 1, 20, "Griffin");
+    Monster first(1, 1, 20, 1, "Centaur");
+    Monster second(1, 1, 20, 0, "Harpyia");
+    Monster third(1, 1, 20, 2, "Griffin");
 
     base.push_back(first);
     base.push_back(second);

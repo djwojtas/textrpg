@@ -32,16 +32,19 @@ private:
     int strength; ///< Heroe strength
     int agility; ///< Heroe agility
     int hp; ///< Heroe Health Points
+    int def; ///< Heroe defense
     int max_hp; ///< Heroe Maximum HP
 
     //Artefact boosts
     int strength_adder; ///< Amount of boosted strength
     int agility_adder; ///< Amount of boosted agility
     int hp_adder; ///< Amount of boosted Health Points
+    int def_adder; ///< Amount of boosted defense
 
     double strength_multiplier; ///< Amount of boosted strength
     double agility_multiplier; ///< Amount of boosted agility
     double hp_multiplier; ///< Amount of boosted Health Points
+    double def_multiplier; ///< Amount of boosted defense
 
     string name; ///< Just Heroe name
 public:
@@ -51,7 +54,7 @@ public:
     /// \param strength_ - Heroe's strength
     /// \param agility_ - Heroe's agility
     /// \param hp_ - Heroe's HP
-    Heroe(string name_, int strength_, int agility_, int hp_);
+    Heroe(string name_, int strength_, int agility_, int hp_, int def_);
 
     /// \brief Default class constructor, sets everything to 0, name to ""
     Heroe();
@@ -76,6 +79,11 @@ public:
     ///
     /// \param hp_ - HP to set
     void setHP(int hp_);
+
+    /// \brief Def setter
+    ///
+    /// \param def_ - def to set
+    void setDef(int def_);
 
     /// \brief MAX HP setter
     ///
@@ -128,6 +136,11 @@ public:
     ///
     /// \return Heroe's HP
     int getHP() const;
+
+    /// \brief def getter
+    ///
+    /// \return Heroe's def
+    int getDef() const;
 
     /// \brief Boosted-Strength getter
     ///
@@ -193,6 +206,11 @@ public:
     ///
     /// \return actual character HP with all eq and consumables
     int getFullHP() const;
+
+    /// \brief Returns def multiplied by multiplier and added adder
+    ///
+    /// \return actual character def with all eq and consumables
+    int getFullDef() const;
 };
 
 #endif

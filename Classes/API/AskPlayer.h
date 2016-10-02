@@ -90,7 +90,9 @@ public:
   /// \param monster_to_print - Monster object that will be used to get stats from
   /// \param subject_agility_boost - heroe agility received from defending
   /// \param monster_agility_boost - monster agility received from defending
-  void printFight(Heroe& subject, Monster& monster_to_print, int subject_agility_boost, int monster_agility_boost);
+  /// \param subject_agility_boost - heroe def received from defending
+  /// \param monster_agility_boost - monster def received from defending
+  void printFight(Heroe& subject, Monster& monster_to_print, int subject_agility_boost, int monster_agility_boost, int subject_def_boost, int monster_def_boost);
 };
 
 /** \brief Only one existing AskPlayer object, used to interact with player */

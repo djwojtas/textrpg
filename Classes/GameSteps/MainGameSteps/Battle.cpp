@@ -27,31 +27,44 @@ void Battle::play(Heroe& subject, Monster opponent)
     int heroe_strength_total = subject.getFullStrength();
     int heroe_agility_total = subject.getFullAgility();
     int heroe_hp_total = subject.getFullHP();
+    int heroe_def_total = subject.getFullDef();
 
     int monster_strength_total = opponent.getStrength();
     int monster_agility_total = opponent.getAgility();
     int monster_hp_total = opponent.getHP();
+    int monster_def_total = opponent.getDef();
 
     bool flag_win = true;
 
     int subject_agility_boost = 0;
     int monster_agility_boost = 0;
 
+    int subject_def_boost = 0;
+    int monster_def_boost = 0;
+
     while(true)
     {
-        ask.printFight(subject, opponent, subject_agility_boost, monster_agility_boost);
+        ask.printFight(subject, opponent, subject_agility_boost, monster_agility_boost, subject_def_boost, monster_def_boost);
+
+        if(monster_agility_boost) --monster_agility_boost;
+        if(subject_agility_boost) --subject_agility_boost;
+
+        if(monster_def_boost) --monster_def_boost;
+        if(subject_def_boost) --subject_def_boost;
 
         int choice=ask.askForInt("What should i do?",
                                  "I've got no time, give correct answer!",
                                  1, 3,
-                                 "1 - Attack\n  DMG = STR and some AGI, CHANCE = AGI)\n"
-                                 "2 - Defend\n  increases AGI by 3, you lose 1 in the end of turn\n"
-                                 "3 - Go for critical strike\n  DMG = STR + HP, CHANCE uses AGI and HP, less hp is more DMG and bigger CHANCE"
+                                 "1 - Attack\n  DMG = STR and some AGI minus opponent DEF, CHANCE = AGI)\n"
+                                 "2 - Defend\n  increases AGI by 3 and DEF by 2, you lose 1 in the end of turn\n"
+                                 "3 - Go for critical strike\n  DMG = STR - opponent DEF + HP, CHANCE uses AGI and HP, less hp is more DMG and bigger CHANCE"
                                  );
 
         if(choice == 1)
         {
           int heroe_dmg = ceil((double)(heroe_strength_total + ceil((rand()%(heroe_agility_total+subject_agility_boost) + ((heroe_agility_total+subject_agility_boost)/2))*0.25))*((double)(rand()% 3 + 7)/5.0));
+          heroe_dmg = heroe_dmg - monster_def_boost - monster_def_total;
+          if(heroe_dmg<0) heroe_dmg = 0;
           Sleep(500);
           int chance = rand()%101;
           int chance_boost = subject.getAgility() + subject_agility_boost + 45 - opponent.getAgility() - monster_agility_boost + rand()%11;
@@ -71,7 +84,8 @@ void Battle::play(Heroe& subject, Monster opponent)
         else if(choice == 2)
         {
           subject_agility_boost += 3;
-          ask.narrate(subject.getName() + " defends and have now " + to_string(subject_agility_boost) + " more AGI!");
+          subject_def_boost += 2;
+          ask.narrate(subject.getName() + " defends and have now " + to_string(subject_agility_boost) + " more AGI and " + to_string(subject_def_boost) + " more DEF!");
         }
         else
         {
@@ -98,7 +112,9 @@ void Battle::play(Heroe& subject, Monster opponent)
 
         if(choice < 6)
         {
-          int monster_dmg = ceil((double)(monster_strength_total + ceil((rand()%(monster_agility_total+monster_agility_boost) + ((monster_agility_total+monster_agility_boost)/2))*0.25))*((double)(rand()% 3 + 7)/5.0));
+          int monster_dmg = ceil((double)(monster_strength_total - heroe_def_total - subject_def_boost + ceil((rand()%(monster_agility_total+monster_agility_boost) + ((monster_agility_total+monster_agility_boost)/2))*0.25))*((double)(rand()% 3 + 7)/5.0));
+          monster_dmg = monster_dmg - heroe_def_total - subject_def_boost;
+          if(monster_dmg<0) monster_dmg=0;
           Sleep(500);
           int chance = rand()%101;
           int chance_boost = opponent.getAgility() + monster_agility_boost + 45 - subject.getAgility() - subject_agility_boost + rand()%11;
@@ -118,7 +134,8 @@ void Battle::play(Heroe& subject, Monster opponent)
         else if(choice < 10)
         {
           monster_agility_boost += 3;
-          ask.narrate(opponent.getName() + " defends and have now " + to_string(monster_agility_boost) + " more AGI!");
+          monster_def_boost += 2;
+          ask.narrate(opponent.getName() + " defends and have now " + to_string(monster_agility_boost) + " more AGI and " + to_string(monster_def_boost) + " more DEF!");
         }
         else
         {
@@ -139,9 +156,6 @@ void Battle::play(Heroe& subject, Monster opponent)
             if(opponent.getDMG(monster_dmg)) break;
           }
         }
-
-        if(monster_agility_boost) --monster_agility_boost;
-        if(subject_agility_boost) --subject_agility_boost;
 
         flag_win = true;
     }

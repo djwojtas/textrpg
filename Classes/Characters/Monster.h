@@ -28,6 +28,7 @@ class Monster
     int strength; ///< Monster's strength
     int agility; ///< Monster's agility
     int hp; ///< Monster's Health Points
+    int def; ///< Monster's defense
     int max_hp; ///< Monster's maximum Health Points
     string name; ///< Monster's name
 public:
@@ -37,7 +38,7 @@ public:
     /// \param agility_ - Monster's agility
     /// \param hp_ - Monster's HP
     /// \param name_ - Monster's name
-    Monster(int strength_, int agility_, int hp_, string name_);
+    Monster(int strength_, int agility_, int hp_, int def, string name_);
 
     //Getters
     /// \brief Strength getter
@@ -54,6 +55,11 @@ public:
     ///
     /// \return Monster's HP
     int getHP() const;
+
+    /// \brief def getter
+    ///
+    /// \return Monster's def
+    int getDef() const;
 
     /// \brief Max HP getter
     ///
@@ -82,6 +88,11 @@ public:
     ///
     /// \param hp_ - HP to set
     void setHP(int hp_);
+
+    /// \brief def setter
+    ///
+    /// \param def_ - def to set
+    void setDef(int def_);
 
     /// \brief Max HP setter
     ///

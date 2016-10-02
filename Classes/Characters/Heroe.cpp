@@ -4,22 +4,25 @@
 
 using namespace std;
 
-Heroe::Heroe(string name_, int strength_, int agility_, int hp_)
+Heroe::Heroe(string name_, int strength_, int agility_, int hp_, int def_)
 {
     name=name_;
 
     strength=strength_;
     agility=agility_;
     hp=hp_;
+    def=def_;
     max_hp=hp_;
 
     strength_adder=0;
     agility_adder=0;
     hp_adder=0;
+    def_adder=0;
 
     strength_multiplier=1;
     agility_multiplier=1;
     hp_multiplier=1;
+    def_multiplier=1;
 }
 
 Heroe::Heroe()
@@ -29,15 +32,18 @@ Heroe::Heroe()
     strength=0;
     agility=0;
     hp=0;
+    def=0;
     max_hp=0;
 
     strength_adder=0;
     agility_adder=0;
     hp_adder=0;
+    def_adder=0;
 
     strength_multiplier=1;
     agility_multiplier=1;
     hp_multiplier=1;
+    def_multiplier=1;
 }
 
 void Heroe::setName(string name_)
@@ -58,6 +64,11 @@ void Heroe::setAgility(int agility_)
 void Heroe::setHP(int hp_)
 {
     hp=hp_;
+}
+
+void Heroe::setDef(int def_)
+{
+  def=def_;
 }
 
 void Heroe::setMaxHP(int max_hp_)
@@ -95,6 +106,11 @@ int Heroe::getHP() const
     return hp;
 }
 
+int Heroe::getDef() const
+{
+    return def;
+}
+
 int Heroe::getMaxHP() const
 {
     return max_hp;
@@ -127,6 +143,7 @@ void Heroe::printHeroe() const
     cout<<"Strength = "<<getFullStrength();
     cout<<"Agility = "<<getFullAgility();
     cout<<"Health Points = "<<getFullHP();
+    cout<<"Defense = "<<getFullDef();
 }
 
 bool Heroe::getDMG(int dmg_amount)
@@ -180,4 +197,9 @@ int Heroe::getFullAgility() const
 int Heroe::getFullHP() const
 {
   return hp * hp_multiplier + hp_adder;
+}
+
+int Heroe::getFullDef() const
+{
+  return def * def_multiplier + def_adder;
 }
